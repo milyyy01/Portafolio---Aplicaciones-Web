@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registro de Clientes</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>Registro de Clientes</h1>
+
+    <div class="banner" id="banner">✓ Cliente guardado correctamente.</div>
+
+    <form id="clientForm" novalidate>
+      <div class="form-card">
+        <div class="section-header">DATOS DEL CLIENTE</div>
+
+        <div class="cell" data-field="cedula">
+          <label for="cedula">Cédula <span class="count" id="count-cedula">0/10</span></label>
+          <input type="text" id="cedula" name="cedula" inputmode="numeric" autocomplete="off" maxlength="10" placeholder="0000000000">
+          <div class="msg" id="msg-cedula"></div>
+        </div>
+
+        <div class="cell" data-field="nombre">
+          <label for="nombre">Nombre <span class="count" id="count-nombre">0/30</span></label>
+          <input type="text" id="nombre" name="nombre" autocomplete="off" maxlength="30" placeholder="Nombre completo">
+          <div class="msg" id="msg-nombre"></div>
+        </div>
+
+        <div class="cell" data-field="direccion">
+          <label for="direccion">Dirección <span class="count" id="count-direccion">0/50</span></label>
+          <input type="text" id="direccion" name="direccion" autocomplete="off" maxlength="50" placeholder="Calle, número, sector">
+          <div class="msg" id="msg-direccion"></div>
+        </div>
+
+        <div class="cell" data-field="telefono">
+          <label for="telefono">Teléfono celular <span class="count" id="count-telefono">0/10</span></label>
+          <input type="text" id="telefono" name="telefono" inputmode="numeric" autocomplete="off" maxlength="10" placeholder="09XXXXXXXX">
+          <div class="msg" id="msg-telefono"></div>
+        </div>
+
+        <div class="cell" data-field="correo">
+          <label for="correo">Correo electrónico</label>
+          <input type="text" id="correo" name="correo" autocomplete="off" placeholder="nombre@dominio.com">
+          <div class="msg" id="msg-correo"></div>
+        </div>
+
+        <div class="certify-row" id="certifyRow">
+          <input type="checkbox" id="certify">
+          <label for="certify">Certifico que todos los datos ingresados son verídicos.</label>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="secondary" id="resetBtn">Limpiar</button>
+          <button type="submit">Guardar cliente</button>
+        </div>
+      </div>
+    </form>
+
+    <div class="record" id="record" style="display:none;">
+      <h2>ÚLTIMO REGISTRO GUARDADO</h2>
+      <table>
+        <tr><td>Cédula</td><td id="r-cedula"></td></tr>
+        <tr><td>Nombre</td><td id="r-nombre"></td></tr>
+        <tr><td>Dirección</td><td id="r-direccion"></td></tr>
+        <tr><td>Teléfono celular</td><td id="r-telefono"></td></tr>
+        <tr><td>Correo electrónico</td><td id="r-correo"></td></tr>
+      </table>
+    </div>
+  </div>
+
+<script>
+(function () {
+  const rules = {
+    cedula: {
+      test: v => /^\d{10}$/.test(v),
+      error: v => {
+        if (v.length === 0) return 'La cédula es obligatoria.';
+        if (!/^\d+$/.test(v)) return 'La cédula solo admite dígitos.';
+        return 'La cédula debe tener exactamente 10 dígitos.';
+      }
+    },
+    nombre: {
+      test: v => v.length > 0 && v.length <= 30 && /^[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+$/.test(v),
+      error: v => {
+        if (v.length === 0) return 'El nombre es obligatorio.';
+        if (v.length > 30) return 'El nombre no puede superar 30 caracteres.';
+        return 'El nombre solo admite letras y espacios.';
+      }
+    },
+    direccion: {
+      test: v => v.length > 0 && v.length <= 50,
+      error: v => {
+        if (v.length === 0) return 'La dirección es obligatoria.';
+        return 'La dirección no puede superar 50 caracteres.';
+      }
+    },
+    telefono: {
+      test: v => /^\d{10}$/.test(v),
+      error: v => {
+        if (v.length === 0) return 'El teléfono es obligatorio.';
+        if (!/^\d+$/.test(v)) return 'El teléfono solo admite dígitos.';
+        return 'El teléfono debe tener exactamente 10 dígitos.';
+      }
+    },
+    correo: {
+      test: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v),
+      error: v => {
+        if (v.length === 0) return 'El correo es obligatorio.';
+        return 'Ingrese un correo con formato válido (usuario@dominio.com).';
+      }
+    }
+  };
+
+  const form = document.getElementById('clientForm');
+  const banner = document.getElementById('banner');
+  const record = document.getElementById('record');
+  const certify = document.getElementById('certify');
+  const certifyRow = document.getElementById('certifyRow');
+
+  const counted = ['cedula', 'nombre', 'direccion', 'telefono'];
+  counted.forEach(name => {
+    const input = document.getElementById(name);
+    const counter = document.getElementById('count-' + name);
+    const max = input.getAttribute('maxlength');
+    input.addEventListener('input', () => {
+      counter.textContent = input.value.length + '/' + max;
+    });
+  });
+
+  function validateField(name) {
+    const input = document.getElementById(name);
+    const fieldEl = form.querySelector('[data-field="' + name + '"]');
+    const msgEl = document.getElementById('msg-' + name);
+    const value = input.value.trim();
+    const ok = rules[name].test(value);
+
+    fieldEl.classList.remove('invalid', 'valid');
+    if (ok) {
+      fieldEl.classList.add('valid');
+      msgEl.textContent = '';
+    } else {
+      fieldEl.classList.add('invalid');
+      msgEl.textContent = rules[name].error(value);
+    }
+    return ok;
+  }
+
+  Object.keys(rules).forEach(name => {
+    const input = document.getElementById(name);
+    input.addEventListener('blur', () => validateField(name));
+    input.addEventListener('input', () => {
+      const fieldEl = form.querySelector('[data-field="' + name + '"]');
+      if (fieldEl.classList.contains('invalid')) validateField(name);
+    });
+  });
+
+  certify.addEventListener('change', () => {
+    if (certify.checked) certifyRow.classList.remove('invalid');
+  });
+
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    form.reset();
+    counted.forEach(name => {
+      document.getElementById('count-' + name).textContent = '0/' + document.getElementById(name).getAttribute('maxlength');
+    });
+    Object.keys(rules).forEach(name => {
+      const fieldEl = form.querySelector('[data-field="' + name + '"]');
+      fieldEl.classList.remove('invalid', 'valid');
+      document.getElementById('msg-' + name).textContent = '';
+    });
+    certifyRow.classList.remove('invalid');
+    banner.classList.remove('show');
+    record.style.display = 'none';
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    let allOk = true;
+
+    Object.keys(rules).forEach(name => {
+      const ok = validateField(name);
+      if (!ok) allOk = false;
+    });
+
+    if (!certify.checked) {
+      certifyRow.classList.add('invalid');
+      allOk = false;
+    } else {
+      certifyRow.classList.remove('invalid');
+    }
+
+    if (!allOk) {
+      banner.classList.remove('show');
+      const firstInvalid = form.querySelector('.cell.invalid input');
+      if (firstInvalid) { firstInvalid.focus(); }
+      else if (certifyRow.classList.contains('invalid')) { certify.focus(); }
+      return;
+    }
+
+    document.getElementById('r-cedula').textContent = document.getElementById('cedula').value.trim();
+    document.getElementById('r-nombre').textContent = document.getElementById('nombre').value.trim();
+    document.getElementById('r-direccion').textContent = document.getElementById('direccion').value.trim();
+    document.getElementById('r-telefono').textContent = document.getElementById('telefono').value.trim();
+    document.getElementById('r-correo').textContent = document.getElementById('correo').value.trim();
+    record.style.display = 'block';
+    banner.classList.add('show');
+  });
+})();
+</script>
+</body>
+</html>
