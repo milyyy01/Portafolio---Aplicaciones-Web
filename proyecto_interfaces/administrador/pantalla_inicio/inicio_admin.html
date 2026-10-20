@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SGRU - Inicio del administrador</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="inicio_admin.css">
+</head>
+<body>
+  <header class="barra-superior">
+    <div class="marca">
+      <div class="logo"><svg class="logo-icono" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="16" r="6" fill="currentColor"/><path d="M8 32c2-7 8-9 12-9s10 2 12 9" fill="currentColor"/></svg><span class="logo-texto">Uleam</span></div>
+      <div class="marca-sgru">
+        <strong>SGRU · Bienestar estudiantil</strong>
+        <span>Universidad Laica Eloy Alfaro de Manabí</span>
+      </div>
+    </div>
+    <button type="button" class="usuario">
+      <span class="avatar-usuario">MC</span>
+      <span class="usuario-datos"><strong>María Cedeño</strong><small>Administradora</small></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+  </header>
+
+  <nav class="pestanas" aria-label="Navegación principal">
+    <div class="lista-pestanas">
+      <a href="#" class="pestana activa" data-pestana>Inicio</a>
+      <a href="#" class="pestana" data-pestana>Solicitudes</a>
+      <a href="#" class="pestana" data-pestana>Habitaciones</a>
+      <a href="#" class="pestana" data-pestana>Tickets</a>
+      <a href="#" class="pestana" data-pestana>Reportes</a>
+    </div>
+    <span class="area">Residencia Manta · 2026-2</span>
+  </nav>
+
+  <main class="contenido">
+    <div class="cabecera-pagina">
+      <div>
+        <h1>Panel de Bienestar Estudiantil</h1>
+        <p class="subtitulo">Resumen de la residencia universitaria · Período 2026-2</p>
+      </div>
+      <span class="fecha-chip">13 oct 2026</span>
+    </div>
+
+    <section class="indicadores">
+      <article>
+        <div><p>Solicitudes pendientes</p><strong>47</strong><small>Por evaluar en este período</small></div>
+        <span class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h6"/></svg></span>
+      </article>
+      <article>
+        <div><p>Cupos libres</p><strong>18</strong><small>Disponibles en Residencia Manta</small></div>
+        <span class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7M3 15h18M7 9V6h10v3"/></svg></span>
+      </article>
+      <article>
+        <div><p>Tickets abiertos</p><strong>8</strong><small>3 requieren atención urgente</small></div>
+        <span class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></span>
+      </article>
+      <article>
+        <div><p>Ocupación %</p><strong>85 %</strong><small>102 de 120 cupos ocupados</small></div>
+        <span class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M10 21v-4h4v4"/></svg></span>
+      </article>
+    </section>
+
+    <div class="paneles">
+      <section class="panel">
+        <div class="panel-cabecera">
+          <h2>Solicitudes recientes</h2>
+          <a href="#" class="ver-todas">Ver todas &rarr;</a>
+        </div>
+        <p class="panel-subtitulo">Últimas solicitudes recibidas en la sede Manta.</p>
+        <div class="contenedor-tabla">
+          <table>
+            <thead><tr><th>Estudiante</th><th>Prioridad</th><th>Estado</th><th>Envío</th></tr></thead>
+            <tbody>
+              <tr><td><div class="estudiante"><span class="avatar">EO</span><strong>Emily Olmedo</strong></div></td><td><span class="insignia alta">Alta</span></td><td><span class="insignia aprobada">Aprobada</span></td><td class="fecha">28 sep 2026</td></tr>
+              <tr><td><div class="estudiante"><span class="avatar">AS</span><strong>Ariela Sánchez</strong></div></td><td><span class="insignia media">Media</span></td><td><span class="insignia revision">En revisión</span></td><td class="fecha">27 sep 2026</td></tr>
+              <tr><td><div class="estudiante"><span class="avatar">ML</span><strong>Milena Loor</strong></div></td><td><span class="insignia baja">Baja</span></td><td><span class="insignia aprobada">Aprobada</span></td><td class="fecha">25 sep 2026</td></tr>
+              <tr><td><div class="estudiante"><span class="avatar">AS</span><strong>Anthony Sánchez</strong></div></td><td><span class="insignia alta">Alta</span></td><td><span class="insignia revision">Pendiente</span></td><td class="fecha">25 sep 2026</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-cabecera">
+          <h2>Tickets urgentes</h2>
+          <span class="contador">3</span>
+        </div>
+        <p class="panel-subtitulo">Prioridad alta · Atención de mantenimiento</p>
+        <ul class="tickets">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg><div><strong>205 · Bloque A</strong><span>Fontanería</span><small>#TK-2026-0082 · Hace 2 h</small></div><span class="insignia alta">Alta</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg><div><strong>204 · Bloque A</strong><span>Electricidad</span><small>#TK-2026-0081 · Hace 3 h</small></div><span class="insignia alta">Alta</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg><div><strong>108 · Bloque B</strong><span>Cerrajería</span><small>#TK-2026-0079 · Hace 5 h</small></div><span class="insignia alta">Alta</span></li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="panel ocupacion">
+      <div class="panel-cabecera">
+        <h2>Ocupación de la residencia</h2>
+        <span class="capacidad">Capacidad total: 120 cupos</span>
+      </div>
+      <div class="fila-sede"><strong>Manta</strong><span>102 ocupados · 18 libres · 85 %</span></div>
+      <div class="barra" role="img" aria-label="Ocupación de Manta: 85 %"><div class="relleno" style="width: 85%"></div></div>
+    </section>
+
+    <footer class="pie">
+      <span>Datos de ejemplo · No representan cifras oficiales de la universidad.</span>
+      <span>SGRU / ULEAM</span>
+    </footer>
+  </main>
+  <script src="inicio_admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+:root {
+  --azul-oscuro: #26285a;
+  --fondo-tarjeta: #efeff7;
+  --borde: #e2e2ea;
+  --gris: #6b6b7b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  color: var(--azul-oscuro);
+  background: #f4f5fa;
+  padding: 24px 16px;
+}
+button { font-family: inherit; }
+[hidden] { display: none !important; }
+
+.panel {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.cabecera { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.cabecera h1 { font-size: 28px; font-weight: 700; }
+.subtitulo { font-size: 13px; color: var(--gris); margin-top: 12px; }
+
+:focus-visible { outline: 2px solid #5b59c9; outline-offset: 2px; }
+
+select {
+  appearance: none;
+  width: 200px;
+  padding: 16px 40px 16px 16px;
+  border: 1px solid #c9c9e0;
+  border-radius: 8px;
+  font: inherit; font-size: 13px; font-weight: 500;
+  color: var(--azul-oscuro);
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2326285a' stroke-width='2.4'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 16px center;
+  cursor: pointer;
+}
+
+.contenedor-tabla { margin-top: 28px; overflow-x: auto; }
+table { width: 100%; min-width: 620px; border-collapse: collapse; font-size: 13px; }
+th {
+  background: #f4f4f8;
+  text-align: left; font-size: 12px; font-weight: 600; color: var(--gris);
+  padding: 16px;
+}
+th:first-child { border-radius: 8px 0 0 8px; }
+th:last-child { border-radius: 0 8px 8px 0; }
+td { padding: 20px 16px; border-bottom: 1px solid var(--borde); }
+.habitacion { font-weight: 700; }
+.fecha { color: var(--gris); }
+.vacia { text-align: center; color: var(--gris); }
+
+.insignia { display: inline-block; font-size: 11px; font-weight: 700; padding: 6px 10px; border-radius: 6px; }
+.alta { background: #fde7ea; color: #b3263e; }
+.media { background: #fff0d6; color: #8a5a00; }
+.baja { background: #e2f1e6; color: #1e7a46; }
+
+@media (max-width: 600px) {
+  .panel { padding: 20px 16px; }
+  .cabecera { flex-direction: column; }
+  .cabecera h1 { font-size: 22px; }
+  select { width: 100%; }
+}

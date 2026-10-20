@@ -1,0 +1,140 @@
+:root {
+  --azul-oscuro: #223468;
+  --titulo: #26337a;
+  --lila: #8785b0;
+  --lila-claro: #ecebf6;
+  --fondo: #f4f5fa;
+  --borde: #e0e0ea;
+  --gris: #7b7b8c;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  color: var(--azul-oscuro);
+  background: var(--fondo);
+}
+button { font-family: inherit; }
+[hidden] { display: none !important; }
+
+/* Encabezado */
+.barra-superior {
+  background: var(--azul-oscuro);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 34px;
+}
+.marca { display: flex; align-items: center; }
+.marca strong { display: block; }
+.marca span { display: block; font-size: 8px; margin-top: 3px; }
+.marca-uleam strong { font-size: 20px; font-weight: 800; letter-spacing: .5px; }
+.marca-sgru { border-left: 1px solid rgba(255,255,255,.3); margin-left: 16px; padding-left: 16px; }
+.marca-sgru strong { font-size: 14px; }
+.marca-sgru span { font-size: 9px; }
+.boton-gestion {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.3);
+  color: #fff; font-size: 11px; font-weight: 600;
+  padding: 9px 14px; border-radius: 6px; cursor: pointer;
+}
+.boton-gestion svg { width: 14px; height: 14px; }
+
+/* Pestañas */
+.pestanas {
+  background: #fff;
+  border-bottom: 1px solid var(--borde);
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 34px;
+}
+.pestana {
+  display: flex; align-items: center; gap: 8px;
+  padding: 14px 0 12px; font-size: 11px; font-weight: 600;
+  color: var(--azul-oscuro); text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+.pestana.activa { border-bottom-color: var(--lila); }
+.pestana svg { width: 14px; height: 14px; }
+.area { font-size: 9px; color: var(--gris); }
+
+.contenido { max-width: 1120px; margin: 0 auto; padding: 36px 34px 28px; }
+.cabecera-pagina { display: flex; justify-content: space-between; align-items: flex-start; }
+.cabecera-pagina h1 { font-size: 26px; font-weight: 800; color: var(--titulo); }
+.periodo-texto { font-size: 11px; color: var(--gris); margin-top: 10px; }
+
+.etiqueta-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--lila-claro); color: #5b4fa5;
+  font-size: 10px; font-weight: 600;
+  padding: 10px 14px; border: 0; border-radius: 6px;
+}
+.etiqueta-chip svg { width: 13px; height: 13px; }
+
+.error { display: block; color: #c0392b; font-size: 11px; margin-top: 6px; }
+.error:empty { display: none; }
+.exito { font-size: 11px; color: #1e7a46; margin-top: 12px; }
+
+:focus-visible { outline: 2px solid #5b59c9; outline-offset: 2px; }
+
+.titulo-seccion { font-size: 8px; font-weight: 600; color: #5a5a6e; margin-top: 22px; }
+a.etiqueta-chip { text-decoration: none; }
+
+.columnas { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: 14px; align-items: start; }
+.tarjeta { background: #fff; border-radius: 14px; padding: 22px 20px; }
+.lado-derecho { display: flex; flex-direction: column; gap: 28px; }
+
+.identidad { display: flex; align-items: center; gap: 14px; }
+.avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--lila-claro); font-size: 15px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.identidad h2 { font-size: 24px; font-weight: 700; line-height: 1.1; }
+.identidad p { font-size: 12px; color: #5a5a6e; margin-top: 4px; }
+.insignia { margin-left: auto; text-align: center; font-size: 9px; font-weight: 600; padding: 8px 14px; border-radius: 14px; line-height: 1.2; }
+.alta { background: #fde7ea; color: #b3263e; }
+hr { border: 0; border-top: 3px solid var(--azul-oscuro); margin: 18px 0 22px; }
+
+.tarjeta h3 { font-size: 17px; font-weight: 500; }
+dl { display: grid; grid-template-columns: 170px 1fr; row-gap: 10px; margin: 16px 0 26px; font-size: 12px; }
+dd { font-weight: 700; }
+
+.documentos { list-style: none; margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+.documentos li { display: flex; align-items: center; gap: 10px; background: var(--lila); border-radius: 4px; padding: 6px 10px; font-size: 12px; width: 265px; max-width: 100%; }
+.documentos li span { flex: 1; }
+.icono-doc { width: 18px; height: 18px; color: #14143a; }
+.icono-ok { width: 14px; height: 14px; color: #1e7a46; }
+
+.puntaje h3 { font-size: 11px; font-weight: 700; }
+.puntos { font-size: 38px; font-weight: 800; color: #14143a; margin-top: 16px; }
+.nota { font-size: 11px; color: #5a5a6e; margin-top: 18px; }
+
+.acciones { width: 232px; padding: 22px 20px; }
+.boton { display: block; width: 100%; padding: 14px 0; border: 0; border-radius: 6px; font-size: 11px; font-weight: 700; color: #fff; cursor: pointer; }
+.boton + .boton { margin-top: 18px; }
+.aceptar { background: #54548a; }
+.aceptar:hover { background: #46467a; }
+.rechazar { background: var(--lila); }
+.rechazar:hover { background: #77759f; }
+
+/* Motivo de rechazo */
+.motivo { padding: 22px 20px; }
+.motivo label { display: block; font-size: 12px; font-weight: 700; }
+.motivo textarea {
+  width: 100%; min-height: 100px; margin-top: 10px; padding: 12px;
+  border: 1px solid var(--borde); border-radius: 8px;
+  font: inherit; font-size: 12px; color: var(--azul-oscuro); resize: vertical;
+}
+.motivo textarea.invalido { border-color: #c0392b; }
+.botones-motivo { display: flex; gap: 12px; margin-top: 14px; }
+.boton-cancelar, .boton-confirmar { padding: 12px 0; border-radius: 6px; font-size: 11px; font-weight: 700; cursor: pointer; }
+.boton-cancelar { width: 34%; background: #fff; border: 1px solid var(--borde); color: var(--azul-oscuro); }
+.boton-confirmar { flex: 1; background: #54548a; border: 0; color: #fff; }
+.boton-confirmar:hover { background: #46467a; }
+
+@media (max-width: 800px) {
+  .columnas { grid-template-columns: 1fr; gap: 24px; }
+  .acciones { width: 100%; }
+  .identidad h2 { font-size: 18px; }
+  dl { grid-template-columns: 140px 1fr; }
+  .contenido, .barra-superior, .pestanas { padding-left: 16px; padding-right: 16px; }
+}

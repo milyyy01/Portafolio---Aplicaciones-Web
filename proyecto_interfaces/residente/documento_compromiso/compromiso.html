@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SGRU - Documento de compromiso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="compromiso.css">
+</head>
+<body>
+  <div class="pantalla">
+    <header class="barra-superior">
+      <a href="#" id="enlaceVolver" aria-label="Volver">&larr;</a>
+      <h1>Documento de compromiso</h1>
+    </header>
+
+    <main class="contenido">
+      <div class="periodo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg>
+        <span>Residencia universitaria — período 2026-2</span>
+      </div>
+
+      <section class="clausula">
+        <h2>1. Condiciones de permanencia</h2>
+        <p>El residente se compromete a cumplir el horario de ingreso y salida establecido, así como las normas de convivencia del bloque asignado.</p>
+      </section>
+      <section class="clausula">
+        <h2>2. Responsabilidad sobre mobiliario</h2>
+        <p>Cualquier daño al mobiliario asignado será reportado mediante el módulo de incidencias y evaluado por Servicios Generales.</p>
+      </section>
+      <section class="clausula">
+        <h2>3. Causales de terminación</h2>
+        <p>El incumplimiento reiterado de las normas de convivencia podrá derivar en la pérdida del cupo asignado.</p>
+      </section>
+
+      <form id="formulario" novalidate>
+        <label class="declaracion">
+          <input type="checkbox" id="aceptoCondiciones">
+          <span>He leído y acepto las condiciones del documento de compromiso.</span>
+        </label>
+        <small class="error" id="error-aceptoCondiciones"></small>
+        <label class="declaracion">
+          <input type="checkbox" id="aceptoLopd">
+          <span>Declaro conocer la política de tratamiento de datos personales (LOPDP).</span>
+        </label>
+        <small class="error" id="error-aceptoLopd"></small>
+
+        <button type="submit" class="boton-principal">Firmar y continuar</button>
+        <p class="exito" id="mensajeExito" hidden>Documento validado. La firma aún no está disponible.</p>
+      </form>
+    </main>
+  </div>
+  <script src="compromiso.js"></script>
+</body>
+</html>

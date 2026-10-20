@@ -1,0 +1,114 @@
+:root {
+  --azul-oscuro: #26285a;
+  --tarjeta: #efeff7;
+  --borde: #e2e2ea;
+  --gris: #6b6b7b;
+  --fondo: #f4f5fa;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  color: var(--azul-oscuro);
+  background: var(--fondo);
+}
+button { font-family: inherit; }
+a { color: inherit; text-decoration: none; }
+svg { flex-shrink: 0; }
+
+/* Encabezado */
+.barra-superior {
+  background: var(--azul-oscuro); color: #fff;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 32px;
+}
+.marca { display: flex; align-items: center; }
+.logo { display: inline-flex; flex-direction: column; align-items: center; }
+.logo-icono { width: 20px; height: 20px; }
+.logo-texto { font-size: 20px; font-weight: 700; letter-spacing: -0.5px; line-height: 1; }
+.marca-sgru { border-left: 1px solid rgba(255,255,255,.3); margin-left: 18px; padding-left: 18px; }
+.marca-sgru strong { display: block; font-size: 16px; font-weight: 700; }
+.marca-sgru span { display: block; font-size: 10px; margin-top: 5px; }
+
+.usuario { display: flex; align-items: center; gap: 10px; background: none; border: 0; color: #fff; cursor: pointer; text-align: left; }
+.avatar-usuario { width: 30px; height: 30px; border-radius: 50%; background: #dcdcf0; color: var(--azul-oscuro); font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.usuario-datos strong { display: block; font-size: 12px; }
+.usuario-datos small { display: block; font-size: 10px; margin-top: 3px; }
+.usuario > svg { width: 14px; height: 14px; }
+
+/* Pestañas */
+.pestanas { background: #fff; border-bottom: 1px solid var(--borde); display: flex; justify-content: space-between; align-items: center; padding: 0 32px; gap: 16px; }
+.lista-pestanas { display: flex; gap: 8px; overflow-x: auto; min-width: 0; }
+.pestana { font-size: 12px; font-weight: 500; padding: 16px 14px 13px; border-bottom: 2px solid transparent; white-space: nowrap; }
+.pestana.activa { font-weight: 700; border-bottom-color: var(--azul-oscuro); }
+.area { font-size: 10px; color: var(--gris); white-space: nowrap; }
+
+/* Contenido */
+.contenido { max-width: 1120px; margin: 0 auto; padding: 36px 32px 24px; }
+.cabecera-pagina { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.cabecera-pagina h1 { font-size: 28px; font-weight: 700; }
+.subtitulo { font-size: 12px; color: var(--gris); margin-top: 10px; }
+.fecha-chip { background: #e6e6ef; font-size: 11px; font-weight: 600; padding: 8px 12px; border-radius: 8px; white-space: nowrap; }
+
+.indicadores { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 28px; }
+.indicadores article { background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 12px; padding: 18px; display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.indicadores p { font-size: 12px; }
+.indicadores strong { display: block; font-size: 30px; font-weight: 700; margin-top: 12px; }
+.indicadores small { display: block; font-size: 10px; color: var(--gris); margin-top: 14px; }
+.icono { width: 36px; height: 36px; background: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.icono svg { width: 18px; height: 18px; }
+
+.paneles { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 16px; margin-top: 16px; align-items: start; }
+.panel { background: #fff; border: 1px solid var(--borde); border-radius: 12px; padding: 22px 22px 20px; }
+.panel-cabecera { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.panel-cabecera h2 { font-size: 18px; font-weight: 700; }
+.panel-subtitulo { font-size: 11px; color: var(--gris); margin-top: 10px; }
+.ver-todas { font-size: 11px; font-weight: 600; }
+.contador { background: #fde7ea; color: #b3263e; font-size: 11px; font-weight: 700; padding: 6px 10px; border-radius: 6px; }
+
+.contenedor-tabla { margin-top: 18px; overflow-x: auto; }
+table { width: 100%; min-width: 460px; border-collapse: collapse; font-size: 12px; }
+th { background: var(--tarjeta); text-align: left; font-size: 10px; font-weight: 600; color: var(--gris); padding: 12px 14px; }
+td { padding: 12px 14px; border-bottom: 1px solid var(--borde); }
+.estudiante { display: flex; align-items: center; gap: 12px; }
+.avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--tarjeta); font-size: 10px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.fecha { color: var(--gris); font-size: 11px; }
+
+.insignia { display: inline-block; font-size: 10px; font-weight: 700; padding: 6px 10px; border-radius: 6px; white-space: nowrap; }
+.alta { background: #fde7ea; color: #b3263e; }
+.media, .revision { background: #fff0d6; color: #8a5a00; }
+.baja, .aprobada { background: #e2f1e6; color: #1e7a46; }
+
+.tickets { list-style: none; margin-top: 8px; }
+.tickets li { display: flex; align-items: center; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--borde); }
+.tickets li > svg { width: 18px; height: 18px; }
+.tickets li div { flex: 1; }
+.tickets strong { display: block; font-size: 13px; }
+.tickets div span { display: block; font-size: 11px; color: var(--gris); margin-top: 5px; }
+.tickets small { display: block; font-size: 10px; color: var(--gris); margin-top: 5px; }
+
+.ocupacion { margin-top: 16px; }
+.capacidad { font-size: 11px; color: var(--gris); }
+.fila-sede { display: flex; justify-content: space-between; gap: 12px; font-size: 12px; margin-top: 14px; }
+.barra { height: 10px; background: var(--tarjeta); border-radius: 5px; margin-top: 10px; overflow: hidden; }
+.relleno { height: 100%; background: var(--azul-oscuro); border-radius: 5px; }
+
+.pie { display: flex; justify-content: space-between; gap: 12px; font-size: 10px; color: var(--gris); margin-top: 20px; }
+
+:focus-visible { outline: 2px solid #5b59c9; outline-offset: 2px; }
+
+@media (max-width: 900px) {
+  .barra-superior, .pestanas { padding-left: 16px; padding-right: 16px; }
+  .contenido { padding: 24px 16px 20px; }
+  .marca-sgru span { display: none; }
+  .usuario-datos { display: none; }
+  .area { display: none; }
+  .cabecera-pagina h1 { font-size: 22px; }
+  .indicadores { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .paneles { grid-template-columns: minmax(0, 1fr); }
+  .pie { flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .indicadores { grid-template-columns: minmax(0, 1fr); }
+}

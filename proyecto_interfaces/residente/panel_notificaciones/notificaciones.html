@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SGRU - Notificaciones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="notificaciones.css">
+</head>
+<body>
+  <div class="pantalla">
+    <header class="barra-superior">
+      <a href="#" id="enlaceVolver" aria-label="Volver">&larr;</a>
+      <h1>Notificaciones</h1>
+    </header>
+
+    <main class="contenido">
+      <article class="notificacion aprobada">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+        <div>
+          <h2>Solicitud aprobada</h2>
+          <p>Tu cupo fue asignado en Residencia Manta.</p>
+          <time>Hace 2 días</time>
+        </div>
+      </article>
+
+      <article class="notificacion neutra">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>
+        <div>
+          <h2>Incidencia resuelta</h2>
+          <p>Tu reporte de fontanería fue atendido.</p>
+          <time>Hace 4 días</time>
+        </div>
+      </article>
+
+      <article class="notificacion alerta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/></svg>
+        <div>
+          <h2>Renovación próxima</h2>
+          <p>Tu permanencia vence el 15 de noviembre.</p>
+          <time>Hace 1 semana</time>
+        </div>
+      </article>
+
+      <article class="notificacion neutra">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg>
+        <div>
+          <h2>Documento firmado</h2>
+          <p>Firmaste tu documento de compromiso.</p>
+          <time>Hace 2 semanas</time>
+        </div>
+      </article>
+    </main>
+  </div>
+  <script src="notificaciones.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SGRU - Reportar incidencia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="incidencia.css">
+  <link rel="stylesheet" href="../../almacenamiento_interfaces/almacenamiento.css">
+</head>
+<body>
+  <div class="pantalla">
+    <header class="barra-superior">
+      <a href="#" id="enlaceVolver" aria-label="Volver">&larr;</a>
+      <h1>Reportar incidencia</h1>
+    </header>
+
+    <main class="contenido">
+      <form id="formulario" novalidate>
+        <div class="campo">
+          <label for="tipo">Tipo de incidencia</label>
+          <select id="tipo">
+            <option value="">Selecciona una opción</option>
+            <option>Fontanería</option>
+            <option>Electricidad</option>
+            <option>Mobiliario</option>
+            <option>Limpieza</option>
+            <option>Otro</option>
+          </select>
+          <small class="error" id="error-tipo"></small>
+        </div>
+
+        <div class="campo">
+          <label for="habitacion">Habitación</label>
+          <input type="text" id="habitacion" placeholder="Ej.: 205 · Bloque A">
+          <small class="error" id="error-habitacion"></small>
+        </div>
+
+        <div class="campo">
+          <label for="descripcion">Descripción</label>
+          <textarea id="descripcion" rows="4" placeholder="Ej.: La llave del lavabo gotea constantemente"></textarea>
+          <small class="error" id="error-descripcion"></small>
+        </div>
+
+        <div class="campo">
+          <label for="botonFoto">Foto (opcional)</label>
+          <button type="button" class="foto" id="botonFoto">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>
+            <span id="textoFoto">Toca para adjuntar una foto</span>
+          </button>
+          <input type="file" id="foto" accept=".jpg,.jpeg,.png" hidden>
+          <small class="error" id="error-foto"></small>
+        </div>
+
+        <div class="campo">
+          <label for="urgencia">Urgencia</label>
+          <select id="urgencia">
+            <option value="">Selecciona una opción</option>
+            <option>Baja</option>
+            <option>Media</option>
+            <option>Alta</option>
+          </select>
+          <small class="error" id="error-urgencia"></small>
+        </div>
+
+        <button type="submit" class="boton-principal">Enviar reporte</button>
+        <p class="exito" id="mensajeExito" hidden>Reporte guardado correctamente.</p>
+      </form>
+
+      <!-- Nuevo: reportes guardados en LocalStorage -->
+      <section class="guardadas">
+        <h2>Reportes guardados</h2>
+        <div class="acciones-datos">
+          <button type="button" class="boton-secundario" id="botonJson">Exportar a JSON</button>
+          <button type="button" class="boton-secundario" id="botonXml">Exportar a XML</button>
+        </div>
+        <ul class="lista-incidencias" id="listaIncidencias"></ul>
+        <p class="vacio" id="mensajeVacio">Aún no hay reportes guardados.</p>
+      </section>
+    </main>
+  </div>
+  <script src="../../almacenamiento_interfaces/almacenamiento.js"></script>
+  <script src="incidencia.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+:root {
+  --azul-oscuro: #26285a;
+  --lila: #8785b0;
+  --texto: #1a1a1a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  color: var(--texto);
+  background: #eceef3;
+}
+
+.pantalla {
+  max-width: 480px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Barra superior */
+.barra-superior {
+  background: var(--azul-oscuro);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+}
+.logo { display: inline-flex; flex-direction: column; align-items: center; }
+.logo-icono { width: 16px; height: 16px; }
+.logo-texto { font-size: 15px; font-weight: 700; letter-spacing: -0.5px; line-height: 1; }
+.nombre-sistema { font-size: 18px; font-weight: 600; }
+
+/* Contenido */
+.contenido { padding: 44px 24px 36px; flex: 1; text-align: center; }
+.contenido h1 { font-size: 24px; font-weight: 700; }
+
+.icono-documento {
+  width: 58px;
+  height: 58px;
+  margin: 22px auto 0;
+  border: 2px solid var(--azul-oscuro);
+  border-radius: 50%;
+  color: var(--azul-oscuro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icono-documento svg { width: 28px; height: 28px; }
+
+.presentacion { font-size: 12px; line-height: 1.5; margin-top: 22px; }
+
+.caja {
+  background: var(--lila);
+  border-radius: 6px;
+  text-align: left;
+}
+.caja-requisitos { margin-top: 34px; padding: 18px 20px 20px; }
+.caja-requisitos h2 { font-size: 11px; font-weight: 700; }
+.caja-requisitos ul { margin-top: 14px; padding-left: 20px; font-size: 11px; }
+.caja-requisitos li + li { margin-top: 14px; }
+
+.caja-proteccion {
+  margin-top: 34px;
+  padding: 16px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.icono-candado { width: 28px; height: 28px; flex-shrink: 0; color: #fff; }
+
+/* Pie de página */
+.pie-pagina {
+  background: var(--azul-oscuro);
+  color: #fff;
+  text-align: center;
+  padding: 18px 16px 20px;
+}
+.boton-comenzar {
+  background: #fff;
+  color: var(--texto);
+  border: 0;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 7px 14px;
+  cursor: pointer;
+}
+.boton-comenzar:hover { background: #e6e6e6; }
+.pie-pagina p { font-size: 10px; margin-top: 14px; }
+
+:focus-visible { outline: 2px solid #5b59c9; outline-offset: 2px; }
+
+/* Vista de computadora */
+@media (min-width: 900px) {
+  body { background: #fff; }
+  .pantalla { max-width: none; }
+  .barra-superior { padding: 16px max(32px, calc((100% - 1000px) / 2)); }
+  .logo-icono { width: 22px; height: 22px; }
+  .logo-texto { font-size: 20px; }
+  .nombre-sistema { font-size: 26px; }
+  .contenido { width: 100%; max-width: 680px; margin: 0 auto; padding: 64px 32px; flex: none; }
+  .contenido h1 { font-size: 36px; }
+  .icono-documento { width: 76px; height: 76px; }
+  .icono-documento svg { width: 36px; height: 36px; }
+  .presentacion { font-size: 15px; }
+  .caja-requisitos { padding: 24px 28px; }
+  .caja-requisitos h2 { font-size: 14px; }
+  .caja-requisitos ul { font-size: 14px; }
+  .caja-proteccion { font-size: 15px; padding: 20px; }
+  .pie-pagina { padding: 28px 16px 30px; margin-top: auto; }
+  .boton-comenzar { font-size: 14px; padding: 12px 32px; }
+  .pie-pagina p { font-size: 12px; }
+}

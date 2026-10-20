@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SGRU - Detalle de solicitud de cupo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="detalle_solicitud.css">
+</head>
+<body>
+    <header class="barra-superior">
+      <div class="marca">
+        <div class="marca-uleam"><strong>ULEAM</strong><span>Universidad Laica Eloy Alfaro de Manabí</span></div>
+        <div class="marca-sgru"><strong>SGRU</strong><span>Bienestar estudiantil</span></div>
+      </div>
+      <button type="button" class="boton-gestion">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M10 21v-4h4v4"/></svg>
+        Gestión de solicitudes
+      </button>
+    </header>
+    <nav class="pestanas">
+      <a href="#" class="pestana activa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h6"/></svg> Solicitudes de cupo</a>
+      <span class="area">Bienestar estudiantil</span>
+    </nav>
+
+  <main class="contenido">
+    <div class="cabecera-pagina">
+      <div>
+        <h1>Detalle de solicitud de cupo</h1>
+        <p class="periodo-texto">Período 2026-2 · Bienestar estudiantil</p>
+        <p class="titulo-seccion">ESTUDIANTES</p>
+      </div>
+      <a href="#" class="etiqueta-chip volver">&larr; Volver</a>
+    </div>
+
+    <div class="columnas">
+      <section class="tarjeta estudiante">
+        <div class="identidad">
+          <span class="avatar">EO</span>
+          <div>
+            <h2>EMILY OLMEDO</h2>
+            <p>Ingeniería en Software - Manta</p>
+          </div>
+          <span class="insignia alta">Prioridad<br>Alta</span>
+        </div>
+        <hr>
+
+        <h3>Ficha Socioeconómica</h3>
+        <dl>
+          <dt>Cantón de procedencia</dt><dd>Pedernales</dd>
+          <dt>Distancia al campus</dt><dd>Menos de 50 km</dd>
+          <dt>Beca activa</dt><dd>Sí</dd>
+          <dt>Ingreso familiar</dt><dd>Menor a 1 SBU</dd>
+          <dt>Dependientes en el hogar</dt><dd>3</dd>
+          <dt>Situación actual</dt><dd>Vive con familiares</dd>
+        </dl>
+
+        <h3>Documento Adjuntos</h3>
+        <ul class="documentos">
+          <li><svg class="icono-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg><span>Cédula de identidad.pdf</span><svg class="icono-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></li>
+          <li><svg class="icono-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg><span>Certificado de matrícula.pdf</span><svg class="icono-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></li>
+          <li><svg class="icono-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg><span>Certificado socioeconómico.pdf</span><svg class="icono-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></li>
+        </ul>
+      </section>
+
+      <div class="lado-derecho">
+        <section class="tarjeta puntaje">
+          <h3>Puntaje de Prioridad</h3>
+          <p class="puntos">80/100</p>
+          <p class="nota">Calculado según distancia, vulnerabilidad y rendimiento académico</p>
+        </section>
+
+        <section class="tarjeta acciones">
+          <button type="button" class="boton aceptar" id="botonAceptar">Aceptar solicitud</button>
+          <button type="button" class="boton rechazar" id="botonRechazar">Rechazar solicitud</button>
+          <p class="exito" id="mensajeAccion" hidden></p>
+        </section>
+
+        <section class="tarjeta motivo" id="cajaMotivo" hidden>
+          <label for="motivoRechazo">Motivo del rechazo</label>
+          <textarea id="motivoRechazo" rows="4" maxlength="300" placeholder="Escribe la razón por la que se rechaza la solicitud"></textarea>
+          <small class="error" id="errorMotivo"></small>
+          <div class="botones-motivo">
+            <button type="button" class="boton-cancelar" id="botonCancelarMotivo">Cancelar</button>
+            <button type="button" class="boton-confirmar" id="botonConfirmarRechazo">Confirmar rechazo</button>
+          </div>
+          <p class="exito" id="mensajeRechazo" hidden></p>
+        </section>
+      </div>
+    </div>
+  </main>
+  <script src="detalle_solicitud.js"></script>
+</body>
+</html>

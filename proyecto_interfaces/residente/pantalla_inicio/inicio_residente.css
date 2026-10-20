@@ -1,0 +1,118 @@
+:root {
+  --azul-oscuro: #26285a;
+  --tarjeta: #f1f1f7;
+  --borde: #dcdce8;
+  --gris: #6b6b7b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  color: var(--azul-oscuro);
+  background: #fff;
+  padding-bottom: 76px;
+}
+button { font-family: inherit; }
+a { color: inherit; text-decoration: none; }
+svg { flex-shrink: 0; }
+
+/* Encabezado */
+.barra-superior {
+  background: var(--azul-oscuro);
+  color: #fff;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 20px;
+}
+.logo { display: inline-flex; flex-direction: column; align-items: center; }
+.logo-icono { width: 18px; height: 18px; }
+.logo-texto { font-size: 17px; font-weight: 700; letter-spacing: -0.5px; line-height: 1; }
+.derecha { display: flex; align-items: center; gap: 14px; }
+.nombre-sistema { font-size: 22px; font-weight: 600; }
+.campana { background: none; border: 0; color: #fff; cursor: pointer; display: flex; }
+.campana svg { width: 22px; height: 22px; }
+
+/* Menú: barra inferior en celular */
+.menu {
+  position: fixed; left: 0; right: 0; bottom: 0;
+  background: #fff; border-top: 1px solid var(--borde);
+  display: flex; justify-content: space-around; padding: 8px 8px 10px;
+}
+.menu a {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  font-size: 10px; font-weight: 500; padding: 8px 14px; border-radius: 8px;
+}
+.menu a svg { width: 20px; height: 20px; }
+.menu a.activo { background: var(--tarjeta); font-weight: 700; }
+
+/* Contenido */
+.contenido { max-width: 1000px; margin: 0 auto; padding: 24px 20px 32px; }
+.contenido h1 { font-size: 26px; font-weight: 700; }
+.datos-estudiante { font-size: 12px; color: var(--gris); margin-top: 10px; }
+
+.estado { background: var(--tarjeta); border: 1px solid var(--borde); border-radius: 14px; padding: 18px 16px 16px; margin-top: 22px; }
+.estado h2 { display: flex; align-items: center; gap: 8px; font-size: 20px; font-weight: 700; }
+.estado h2 svg { width: 22px; height: 22px; }
+.estado > p { font-size: 12px; color: var(--gris); margin-top: 12px; }
+.etapas { list-style: none; display: flex; justify-content: space-between; margin-top: 18px; }
+.etapas li { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 10px; font-weight: 600; flex: 1; }
+.punto { width: 26px; height: 26px; border-radius: 50%; background: var(--azul-oscuro); color: #fff; display: flex; align-items: center; justify-content: center; }
+.punto svg { width: 14px; height: 14px; }
+.progreso { height: 4px; background: var(--borde); border-radius: 2px; margin-top: 14px; overflow: hidden; }
+.relleno { height: 100%; background: var(--azul-oscuro); }
+
+.accesos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+.acceso {
+  background: var(--tarjeta); border-radius: 10px; padding: 16px 14px;
+  min-height: 92px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px;
+}
+.acceso svg { width: 22px; height: 22px; }
+.acceso span { font-size: 12px; font-weight: 700; }
+.acceso:hover { background: #e8e8f2; }
+
+.titulo-notificaciones { font-size: 17px; font-weight: 700; margin-top: 28px; }
+.notificaciones { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 14px; }
+.notificacion { display: flex; gap: 12px; align-items: flex-start; border-radius: 8px; padding: 14px; }
+.notificacion svg { width: 18px; height: 18px; }
+.notificacion h3 { font-size: 13px; font-weight: 700; }
+.notificacion p { font-size: 12px; margin-top: 8px; }
+.notificacion time { display: block; font-size: 10px; margin-top: 8px; }
+.aprobada { background: #e4f3e8; border: 1px solid #c9e6d0; color: #1e7a46; }
+.aprobada p, .aprobada time { color: #2f8a57; }
+.neutra { background: var(--tarjeta); }
+.neutra p, .neutra time { color: var(--gris); }
+
+:focus-visible { outline: 2px solid #5b59c9; outline-offset: 2px; }
+
+/* Vista de computadora */
+@media (min-width: 900px) {
+  body { padding-bottom: 0; }
+  .barra-superior { padding: 14px max(32px, calc((100% - 936px) / 2)); }
+  .logo-icono { width: 22px; height: 22px; }
+  .logo-texto { font-size: 20px; }
+  .nombre-sistema { font-size: 26px; }
+
+  .menu { position: static; justify-content: flex-start; gap: 8px; border-top: 0; border-bottom: 1px solid var(--borde); padding: 0 max(24px, calc((100% - 952px) / 2)); }
+  .menu a { flex-direction: row; gap: 8px; font-size: 13px; padding: 14px 12px; border-radius: 0; border-bottom: 2px solid transparent; }
+  .menu a.activo { background: none; border-bottom-color: var(--azul-oscuro); }
+
+  .contenido { padding: 40px 32px 48px; }
+  .contenido h1 { font-size: 32px; }
+  .datos-estudiante { font-size: 14px; }
+  .estado { padding: 26px 28px 24px; }
+  .estado h2 { font-size: 24px; }
+  .estado > p { font-size: 14px; }
+  .etapas { max-width: 640px; margin-top: 24px; }
+  .etapas li { font-size: 12px; }
+  .punto { width: 32px; height: 32px; }
+  .accesos { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+  .acceso { min-height: 120px; padding: 20px 18px; }
+  .acceso svg { width: 26px; height: 26px; }
+  .acceso span { font-size: 14px; }
+  .titulo-notificaciones { font-size: 20px; margin-top: 36px; }
+  .notificaciones { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .notificacion { padding: 18px; }
+  .notificacion h3 { font-size: 14px; }
+  .notificacion p { font-size: 13px; }
+  .notificacion time { font-size: 11px; }
+}

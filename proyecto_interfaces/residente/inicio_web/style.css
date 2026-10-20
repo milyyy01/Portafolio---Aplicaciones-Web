@@ -1,0 +1,131 @@
+:root {
+  --azul-oscuro: #26285a;
+  --lila: #8785b0;
+  --gris: #e6e6e6;
+  --texto: #1a1a1a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  color: var(--texto);
+  background: #fff;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 24px 24px;
+}
+
+/* Barra de navegación */
+.barra-navegacion {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 0;
+  font-size: 12px;
+}
+.enlace-menu {
+  color: var(--texto);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+.enlace-menu.activo { background: var(--gris); }
+.enlace-menu:hover { background: #f0f0f0; }
+
+/* Botones */
+.boton {
+  font-family: inherit;
+  font-size: 12px;
+  border: 1px solid #bbb;
+  background: var(--gris);
+  color: var(--texto);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.boton:hover { background: #d8d8d8; }
+.boton-ingreso { width: 104px; padding: 5px 0; }
+.boton-informacion { padding: 6px 0; width: 140px; margin-top: 28px; }
+
+/* Portada */
+.portada {
+  background: var(--azul-oscuro);
+  color: #fff;
+  text-align: center;
+  padding: 32px 16px 30px;
+}
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f3dff0;
+}
+.logo-icono { width: 30px; height: 30px; }
+.logo-texto { font-size: 26px; font-weight: 700; letter-spacing: -1px; line-height: 1; }
+.portada h1 { font-size: 46px; font-weight: 700; margin-top: 14px; }
+.portada h2 {
+  font-size: 19px;
+  font-weight: 600;
+  color: #b9b7bd;
+  margin-top: 12px;
+}
+
+/* Cómo funciona */
+.como-funciona { padding: 40px 38px 36px; }
+.como-funciona h3 { font-size: 24px; font-weight: 700; }
+
+.pasos {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-areas:
+    "p1 fd p2"
+    ".  .  fab"
+    "p4 fi p3";
+  align-items: center;
+  justify-items: center;
+  row-gap: 14px;
+  max-width: 580px;
+  margin: 36px auto 0;
+}
+.paso {
+  width: 190px;
+  min-height: 56px;
+  background: var(--lila);
+  border-radius: 4px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.paso-1 { grid-area: p1; } .paso-2 { grid-area: p2; }
+.paso-3 { grid-area: p3; } .paso-4 { grid-area: p4; }
+.flecha { font-size: 34px; line-height: 1; }
+.flecha-derecha { grid-area: fd; }
+.flecha-abajo { grid-area: fab; }
+.flecha-izquierda { grid-area: fi; }
+
+/* Pie de página */
+.pie-pagina {
+  background: var(--azul-oscuro);
+  color: #fff;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.7;
+  padding: 26px 16px;
+}
+
+:focus-visible { outline: 2px solid #5b59c9; outline-offset: 2px; }
+
+/* Responsive: en móvil los pasos pasan a una sola columna con flechas hacia abajo */
+@media (max-width: 560px) {
+  .como-funciona { padding: 28px 8px; }
+  .pasos { display: flex; flex-direction: column; }
+  .paso { width: 100%; max-width: 280px; }
+  .paso-1 { order: 1; } .flecha-derecha { order: 2; transform: rotate(90deg); }
+  .paso-2 { order: 3; } .flecha-abajo { order: 4; }
+  .paso-3 { order: 5; } .flecha-izquierda { order: 6; transform: rotate(-90deg); }
+  .paso-4 { order: 7; }
+}

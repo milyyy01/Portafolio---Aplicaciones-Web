@@ -1,0 +1,78 @@
+:root {
+  --azul-oscuro: #26285a;
+  --fondo-tarjeta: #f1f1f7;
+  --borde: #d5d5dc;
+  --gris: #7b7b8c;
+  --rojo: #c0392b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  color: var(--azul-oscuro);
+  background: #eceef3;
+}
+
+.pantalla {
+  max-width: 480px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: #fff;
+}
+
+/* Barra superior con flecha de regreso */
+.barra-superior {
+  background: var(--azul-oscuro);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 20px;
+}
+.barra-superior a { color: #fff; font-size: 22px; line-height: 1; text-decoration: none; }
+.barra-superior h1 { font-size: 18px; font-weight: 700; }
+
+.contenido { padding: 22px 20px 32px; }
+
+.error { display: block; color: var(--rojo); font-size: 10px; margin-top: 4px; }
+.error:empty { display: none; }
+.exito { margin-top: 14px; font-size: 11px; color: #1e7a46; }
+.exito[hidden] { display: none; }
+
+:focus-visible { outline: 2px solid #5b59c9; outline-offset: 2px; }
+
+.notificacion {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  border-radius: 8px;
+  padding: 16px 14px;
+}
+.notificacion + .notificacion { margin-top: 12px; }
+.notificacion svg { width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px; }
+.notificacion h2 { font-size: 13px; font-weight: 700; }
+.notificacion p { font-size: 12px; color: #6b6b7b; margin-top: 8px; }
+.notificacion time { display: block; font-size: 11px; color: #8a8a99; margin-top: 10px; }
+
+.aprobada { background: #e4f3e8; border: 1px solid #c9e6d0; color: #1e7a46; }
+.aprobada p, .aprobada time { color: #2f8a57; }
+
+.neutra { background: #f4f4f8; }
+
+.alerta { background: #fff3dc; border: 1px solid #f5e0b0; color: #8a5a00; }
+.alerta p, .alerta time { color: #9a6a10; }
+
+/* Vista de computadora */
+@media (min-width: 900px) {
+  body { background: #fff; }
+  .pantalla { max-width: none; }
+  .barra-superior { padding: 22px max(32px, calc((100% - 696px) / 2)); }
+  .barra-superior h1 { font-size: 20px; }
+  .contenido { max-width: 760px; margin: 0 auto; padding: 40px 32px 56px; }
+  .notificacion { padding: 20px 18px; gap: 16px; }
+  .notificacion svg { width: 22px; height: 22px; }
+  .notificacion h2 { font-size: 15px; }
+  .notificacion p { font-size: 13px; }
+  .notificacion time { font-size: 12px; }
+}

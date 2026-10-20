@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SGRU - Tickets de mantenimiento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tickets.css">
+</head>
+<body>
+  <main class="panel">
+    <div class="cabecera">
+      <div>
+        <h1>Tickets de mantenimiento</h1>
+        <p class="subtitulo">Servicios Generales</p>
+      </div>
+      <select id="filtroEstado" aria-label="Filtrar por estado">
+        <option value="">Todos los estados</option>
+        <option>Pendiente</option>
+        <option>En proceso</option>
+        <option>Resuelto</option>
+      </select>
+    </div>
+
+    <div class="contenedor-tabla">
+      <table>
+        <thead>
+          <tr><th>Habitación</th><th>Tipo</th><th>Urgencia</th><th>Estado</th><th>Reportado</th></tr>
+        </thead>
+        <tbody>
+          <tr data-estado="Pendiente">
+            <td class="habitacion">203 · Bloque A</td>
+            <td>Fontanería</td>
+            <td><span class="insignia alta">Alta</span></td>
+            <td>Pendiente</td>
+            <td class="fecha">Hoy</td>
+          </tr>
+          <tr data-estado="En proceso">
+            <td class="habitacion">115 · Bloque B</td>
+            <td>Electricidad</td>
+            <td><span class="insignia media">Media</span></td>
+            <td>En proceso</td>
+            <td class="fecha">Ayer</td>
+          </tr>
+          <tr data-estado="Resuelto">
+            <td class="habitacion">308 · Bloque C</td>
+            <td>Mobiliario</td>
+            <td><span class="insignia baja">Baja</span></td>
+            <td>Resuelto</td>
+            <td class="fecha">27 sep</td>
+          </tr>
+          <tr id="filaVacia" hidden><td colspan="5" class="vacia">No hay tickets con ese estado.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <script src="tickets.js"></script>
+</body>
+</html>

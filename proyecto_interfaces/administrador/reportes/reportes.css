@@ -1,0 +1,65 @@
+:root {
+  --azul-oscuro: #26285a;
+  --fondo-tarjeta: #efeff7;
+  --borde: #e2e2ea;
+  --gris: #6b6b7b;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  color: var(--azul-oscuro);
+  background: #f4f5fa;
+  padding: 24px 16px;
+}
+button { font-family: inherit; }
+[hidden] { display: none !important; }
+
+.panel {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.cabecera { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.cabecera h1 { font-size: 28px; font-weight: 700; }
+.subtitulo { font-size: 13px; color: var(--gris); margin-top: 12px; }
+
+:focus-visible { outline: 2px solid #5b59c9; outline-offset: 2px; }
+
+.exportar { display: flex; align-items: center; gap: 12px; }
+.exportar svg { width: 20px; height: 20px; }
+.boton-exportar {
+  background: #fff; color: var(--azul-oscuro);
+  border: 1px solid var(--borde); border-radius: 8px;
+  padding: 14px 28px; font-size: 13px; font-weight: 600; cursor: pointer;
+}
+.boton-exportar:hover { background: #f4f4f8; }
+.exito { font-size: 12px; color: #1e7a46; margin-top: 12px; }
+
+.indicadores { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 24px; }
+.indicadores article { background: var(--fondo-tarjeta); border-radius: 12px; padding: 22px 20px 24px; }
+.indicadores p { font-size: 12px; color: var(--gris); }
+.indicadores strong { display: block; font-size: 30px; font-weight: 700; margin-top: 14px; }
+
+.bloque { margin-top: 30px; }
+.bloque h2 { font-size: 20px; font-weight: 700; }
+.separado { border-top: 1px solid var(--borde); padding-top: 30px; }
+
+.fila-sede { display: flex; justify-content: space-between; font-size: 13px; margin-top: 16px; }
+.fila-sede strong { font-size: 13px; }
+.barra { height: 10px; background: var(--fondo-tarjeta); border-radius: 5px; margin-top: 12px; overflow: hidden; }
+.relleno { height: 100%; background: var(--azul-oscuro); border-radius: 5px; }
+
+.lista { list-style: none; margin-top: 10px; }
+.lista li { display: flex; justify-content: space-between; font-size: 13px; padding: 17px 0; border-bottom: 1px solid var(--borde); }
+
+@media (max-width: 700px) {
+  .panel { padding: 20px 16px; }
+  .cabecera h1 { font-size: 22px; }
+  .indicadores { grid-template-columns: repeat(2, 1fr); }
+}

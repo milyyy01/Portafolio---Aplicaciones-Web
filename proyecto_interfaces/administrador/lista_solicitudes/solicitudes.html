@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SGRU - Solicitudes de cupo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="solicitudes.css">
+</head>
+<body>
+    <header class="barra-superior">
+      <div class="marca">
+        <div class="marca-uleam"><strong>ULEAM</strong><span>Universidad Laica Eloy Alfaro de Manabí</span></div>
+        <div class="marca-sgru"><strong>SGRU</strong><span>Bienestar estudiantil</span></div>
+      </div>
+      <button type="button" class="boton-gestion">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M10 21v-4h4v4"/></svg>
+        Gestión de solicitudes
+      </button>
+    </header>
+    <nav class="pestanas">
+      <a href="#" class="pestana activa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h6"/></svg> Solicitudes de cupo</a>
+      <span class="area">Bienestar estudiantil</span>
+    </nav>
+
+  <main class="contenido">
+    <div class="cabecera-pagina">
+      <div>
+        <h1>Solicitudes de cupo</h1>
+        <p class="periodo-texto">Período 2026-2 · Bienestar estudiantil</p>
+      </div>
+      <span class="etiqueta-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
+        Período 2026-2
+      </span>
+    </div>
+
+    <p class="titulo-totales">TOTALES GLOBALES</p>
+    <section class="totales">
+      <article class="total">
+        <div><p>Pendientes</p><strong>47</strong></div>
+        <span class="icono-total amarillo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2 2"/></svg></span>
+      </article>
+      <article class="total">
+        <div><p>Aprobadas</p><strong>112</strong></div>
+        <span class="icono-total verde"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></svg></span>
+      </article>
+      <article class="total">
+        <div><p>Rechazadas</p><strong>9</strong></div>
+        <span class="icono-total rosa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M9.5 9.5l5 5M14.5 9.5l-5 5"/></svg></span>
+      </article>
+      <article class="total">
+        <div><p>Cupos libres</p><strong>18</strong></div>
+        <span class="icono-total lila"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13l2-7h12l2 7v5H4zM4 13h5l1 2h4l1-2h5"/></svg></span>
+      </article>
+    </section>
+
+    <section class="tarjeta-tabla">
+      <div class="tabla-cabecera">
+        <div>
+          <h2>Solicitudes registradas</h2>
+          <p>Consulta el estado de la solicitud.</p>
+        </div>
+        <div class="filtros">
+          <label>Sede
+            <select id="filtroSede">
+              <option value="">Todas las sedes</option>
+              <option>Manta</option>
+              <option>Chone</option>
+              <option>El Carmen</option>
+            </select>
+          </label>
+          <label>Estado
+            <select id="filtroEstado">
+              <option value="">Todos los estados</option>
+              <option>Pendiente</option>
+              <option>Aprobada</option>
+              <option>Rechazada</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr><th>Estudiante</th><th>Sede</th><th>Prioridad</th><th>Estado</th><th>Fecha</th></tr>
+        </thead>
+        <tbody>
+          <tr data-sede="Manta" data-estado="Pendiente">
+            <td><div class="estudiante"><span class="avatar">EO</span><strong>Emily Olmedo</strong></div></td>
+            <td>Manta</td>
+            <td><span class="insignia alta">Alta</span></td>
+            <td><span class="insignia pendiente">Pendiente</span></td>
+            <td class="fecha">28 sep</td>
+          </tr>
+          <tr data-sede="Manta" data-estado="Pendiente">
+            <td><div class="estudiante"><span class="avatar">AS</span><strong>Ariela Sánchez</strong></div></td>
+            <td>Manta</td>
+            <td><span class="insignia media">Media</span></td>
+            <td><span class="insignia pendiente">Pendiente</span></td>
+            <td class="fecha">27 sep</td>
+          </tr>
+          <tr data-sede="Manta" data-estado="Aprobada">
+            <td><div class="estudiante"><span class="avatar">ML</span><strong>Milena Loor</strong></div></td>
+            <td>Manta</td>
+            <td><span class="insignia baja">Baja</span></td>
+            <td><span class="insignia aprobada">Aprobada</span></td>
+            <td class="fecha">25 sep</td>
+          </tr>
+          <tr data-sede="Manta" data-estado="Pendiente">
+            <td><div class="estudiante"><span class="avatar">AS</span><strong>Anthony Sánchez</strong></div></td>
+            <td>Manta</td>
+            <td><span class="insignia alta">Alta</span></td>
+            <td><span class="insignia pendiente">Pendiente</span></td>
+            <td class="fecha">25 sep</td>
+          </tr>
+          <tr id="filaVacia" hidden><td colspan="5" class="vacia">No hay solicitudes con esos filtros.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer class="pie">
+      <span>Los indicadores corresponden a totales globales; la tabla muestra las solicitudes de referencia.</span>
+      <span>SGRU / ULEAM</span>
+    </footer>
+  </main>
+  <script src="solicitudes.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SGRU - Reportes institucionales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="reportes.css">
+  <link rel="stylesheet" href="../../almacenamiento_interfaces/almacenamiento.css">
+</head>
+<body>
+  <main class="panel">
+    <div class="cabecera">
+      <div>
+        <h1>Reportes institucionales</h1>
+        <p class="subtitulo">Período 2026-2 · Rendición de cuentas</p>
+      </div>
+      <div class="exportar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>
+        <button type="button" class="boton-exportar" id="botonExportarJson">Exportar JSON</button>
+        <button type="button" class="boton-exportar" id="botonExportarXml">Exportar XML</button>
+      </div>
+    </div>
+    <p class="exito" id="mensajeExportar" hidden></p>
+
+    <section class="indicadores">
+      <article><p>Ocupación general</p><strong>78%</strong></article>
+      <article><p>Becas otorgadas</p><strong>96</strong></article>
+      <article><p>Incidencias abiertas</p><strong id="indIncidencias">0</strong></article>
+      <article><p>T. resp. promedio</p><strong>22h</strong></article>
+    </section>
+
+    <section class="bloque">
+      <h2>Ocupación por sede</h2>
+      <div class="fila-sede">
+        <span>Manta</span><strong>78%</strong>
+      </div>
+      <div class="barra" role="img" aria-label="Ocupación en Manta: 78%"><div class="relleno" style="width: 78%"></div></div>
+    </section>
+
+    <section class="bloque separado">
+      <h2>Tipos de incidencia más frecuentes</h2>
+      <ul class="lista" id="listaTipos"></ul>
+    </section>
+  </main>
+  <script src="../../almacenamiento_interfaces/almacenamiento.js"></script>
+  <script src="reportes.js"></script>
+</body>
+</html>

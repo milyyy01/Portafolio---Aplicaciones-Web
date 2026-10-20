@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SGRU - Solicitud de cupo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="solicitud.css">
+</head>
+<body>
+  <div class="pantalla">
+
+    <header class="barra-superior">
+      <div class="logo">
+        <svg class="logo-icono" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle cx="20" cy="16" r="6" fill="currentColor"/>
+          <path d="M8 32c2-7 8-9 12-9s10 2 12 9" fill="currentColor"/>
+        </svg>
+        <span class="logo-texto">Uleam</span>
+      </div>
+      <span class="nombre-sistema">SGRU</span>
+    </header>
+
+    <main class="contenido">
+      <h1>Solicitud de cupo</h1>
+      <p class="subtitulo" id="subtitulo"></p>
+
+      <div class="progreso" id="progreso">
+        <div class="barras">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <p id="textoPaso"></p>
+      </div>
+
+      <form id="formulario" novalidate>
+
+        <!-- Paso 1: Datos personales -->
+        <section class="seccion" data-paso="1">
+          <div class="campo">
+            <label for="nombres">Nombres completos</label>
+            <input type="text" id="nombres" placeholder="Ej.: Camila Valentina">
+            <small class="error" id="error-nombres"></small>
+          </div>
+          <div class="campo">
+            <label for="apellidos">Apellidos completos</label>
+            <input type="text" id="apellidos" placeholder="Ej.: Zambrano Loor">
+            <small class="error" id="error-apellidos"></small>
+          </div>
+          <div class="fila">
+            <div class="campo">
+              <label for="cedula">Cédula</label>
+              <input type="text" id="cedula" inputmode="numeric" maxlength="10" placeholder="Ej.: 1312345678">
+              <small class="error" id="error-cedula"></small>
+            </div>
+            <div class="campo">
+              <label for="nacimiento">Nacimiento</label>
+              <input type="date" id="nacimiento">
+              <small class="error" id="error-nacimiento"></small>
+            </div>
+          </div>
+          <div class="campo">
+            <label for="correo">Correo institucional</label>
+            <input type="email" id="correo" placeholder="Ej.: czambrano@live.uleam.edu.ec">
+            <small class="error" id="error-correo"></small>
+          </div>
+          <div class="campo">
+            <label for="telefono">Teléfono celular</label>
+            <input type="tel" id="telefono" inputmode="numeric" maxlength="10" placeholder="Ej.: 0991234567">
+            <small class="error" id="error-telefono"></small>
+          </div>
+          <div class="campo">
+            <label for="carrera">Carrera</label>
+            <select id="carrera">
+              <option value="">Ej.: Ingeniería en Sistemas</option>
+              <option>Ingeniería en Sistemas</option>
+              <option>Ingeniería en Software</option>
+              <option>Arquitectura</option>
+              <option>Derecho</option>
+              <option>Enfermería</option>
+              <option>Medicina</option>
+              <option>Psicología</option>
+              <option>Administración de Empresas</option>
+              <option>Contabilidad y Auditoría</option>
+            </select>
+            <small class="error" id="error-carrera"></small>
+          </div>
+          <div class="campo">
+            <label for="sede">Sede / extensión</label>
+            <select id="sede">
+              <option value="">Ej.: Manta (matriz)</option>
+              <option>Manta (matriz)</option>
+              <option>Chone</option>
+              <option>El Carmen</option>
+              <option>Pedernales</option>
+              <option>Bahía de Caráquez</option>
+              <option>Tosagua</option>
+              <option>Flavio Alfaro</option>
+            </select>
+            <small class="error" id="error-sede"></small>
+          </div>
+        </section>
+
+        <!-- Paso 2: Ficha socioeconómica -->
+        <section class="seccion" data-paso="2" hidden>
+          <div class="campo">
+            <label for="canton">Cantón/ciudad de procedencia</label>
+            <input type="text" id="canton" placeholder="Ej.: Pedernales">
+            <small class="error" id="error-canton"></small>
+          </div>
+          <div class="campo">
+            <label for="distancia">Distancia aproximada al campus</label>
+            <select id="distancia">
+              <option value="">Selecciona una opción</option>
+              <option>Menos de 50 km</option>
+              <option>Entre 50 y 100 km</option>
+              <option>Entre 100 y 200 km</option>
+              <option>Más de 200 km</option>
+            </select>
+            <small class="error" id="error-distancia"></small>
+          </div>
+          <div class="campo">
+            <span class="etiqueta">¿Tienes beca activa?</span>
+            <div class="opciones">
+              <label class="opcion"><input type="radio" name="beca" value="Sí"><span>Sí</span></label>
+              <label class="opcion"><input type="radio" name="beca" value="No"><span>No</span></label>
+            </div>
+            <small class="error" id="error-beca"></small>
+          </div>
+          <div class="campo" id="campoTipoBeca">
+            <label for="tipoBeca">Tipo de beca</label>
+            <select id="tipoBeca">
+              <option value="">Selecciona una opción</option>
+              <option>Excelencia académica</option>
+              <option>Socioeconómica</option>
+              <option>Deportiva</option>
+              <option>Cultural</option>
+              <option>Otra</option>
+            </select>
+            <small class="error" id="error-tipoBeca"></small>
+          </div>
+          <div class="campo">
+            <label for="ingreso">Ingreso familiar mensual aproximado</label>
+            <select id="ingreso">
+              <option value="">Selecciona una opción</option>
+              <option>Menor a 1 SBU</option>
+              <option>Entre 1 y 2 SBU</option>
+              <option>Entre 2 y 3 SBU</option>
+              <option>Mayor a 3 SBU</option>
+            </select>
+            <small class="error" id="error-ingreso"></small>
+          </div>
+          <div class="campo">
+            <label for="dependientes">Número de dependientes en el hogar</label>
+            <input type="number" id="dependientes" min="0" max="20" placeholder="Ej.: 3">
+            <small class="error" id="error-dependientes"></small>
+          </div>
+          <div class="campo">
+            <span class="etiqueta">¿Tienes alguna discapacidad o condición de salud relevante?</span>
+            <div class="opciones">
+              <label class="opcion"><input type="radio" name="discapacidad" value="Sí"><span>Sí</span></label>
+              <label class="opcion"><input type="radio" name="discapacidad" value="No"><span>No</span></label>
+            </div>
+            <small class="error" id="error-discapacidad"></small>
+          </div>
+          <div class="campo">
+            <label for="vivienda">Situación de vivienda actual</label>
+            <select id="vivienda">
+              <option value="">Selecciona una opción</option>
+              <option>Vivo con familiares</option>
+              <option>Arriendo</option>
+              <option>Vivienda propia</option>
+              <option>Vivienda compartida</option>
+              <option>Otra</option>
+            </select>
+            <small class="error" id="error-vivienda"></small>
+          </div>
+        </section>
+
+        <!-- Paso 3: Documentos adjuntos -->
+        <section class="seccion" data-paso="3" hidden>
+          <p class="formatos">Formatos permitidos: PDF o JPG · Máx. 5MB por archivo</p>
+
+          <div class="documento" data-doc="cedula" data-titulo="Cédula de identidad">
+            <div class="doc-cargado" hidden>
+              <svg class="icono-archivo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>
+              <div class="doc-textos"><strong>Cédula de identidad</strong><span class="doc-nombre"></span></div>
+              <button type="button" class="doc-quitar" aria-label="Quitar archivo">&times;</button>
+            </div>
+            <button type="button" class="doc-vacio">
+              <svg class="icono-subir" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"/></svg>
+              <strong>Cédula de identidad</strong>
+              <span>Toca para subir archivo</span>
+            </button>
+            <input type="file" accept=".pdf,.jpg,.jpeg" hidden>
+            <small class="error"></small>
+          </div>
+
+          <div class="documento" data-doc="matricula" data-titulo="Certificado de matrícula">
+            <div class="doc-cargado" hidden>
+              <svg class="icono-archivo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>
+              <div class="doc-textos"><strong>Certificado de matrícula</strong><span class="doc-nombre"></span></div>
+              <button type="button" class="doc-quitar" aria-label="Quitar archivo">&times;</button>
+            </div>
+            <button type="button" class="doc-vacio">
+              <svg class="icono-subir" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"/></svg>
+              <strong>Certificado de matrícula</strong>
+              <span>Toca para subir archivo</span>
+            </button>
+            <input type="file" accept=".pdf,.jpg,.jpeg" hidden>
+            <small class="error"></small>
+          </div>
+
+          <div class="documento" data-doc="socioeconomico" data-titulo="Certificado socioeconómico">
+            <div class="doc-cargado" hidden>
+              <svg class="icono-archivo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>
+              <div class="doc-textos"><strong>Certificado socioeconómico</strong><span class="doc-nombre"></span></div>
+              <button type="button" class="doc-quitar" aria-label="Quitar archivo">&times;</button>
+            </div>
+            <button type="button" class="doc-vacio">
+              <svg class="icono-subir" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"/></svg>
+              <strong>Certificado socioeconómico</strong>
+              <span>Toca para subir archivo</span>
+            </button>
+            <input type="file" accept=".pdf,.jpg,.jpeg" hidden>
+            <small class="error"></small>
+          </div>
+
+          <div class="documento inactivo" data-doc="discapacidad" data-titulo="Carnet de discapacidad">
+            <div class="doc-cargado" hidden>
+              <svg class="icono-archivo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>
+              <div class="doc-textos"><strong>Carnet de discapacidad</strong><span class="doc-nombre"></span></div>
+              <button type="button" class="doc-quitar" aria-label="Quitar archivo">&times;</button>
+            </div>
+            <button type="button" class="doc-vacio" disabled>
+              <svg class="icono-subir" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
+              <strong>Carnet de discapacidad</strong>
+              <span>No aplica según tus respuestas</span>
+            </button>
+            <input type="file" accept=".pdf,.jpg,.jpeg" hidden>
+            <small class="error"></small>
+          </div>
+        </section>
+
+        <!-- Paso 4: Revisión y envío -->
+        <section class="seccion" data-paso="4" hidden>
+          <div class="resumen">
+            <div class="resumen-cabecera"><h2>Datos personales</h2><button type="button" class="editar" data-ir="1">Editar</button></div>
+            <div class="resumen-cuerpo">
+              <p id="resNombre"></p>
+              <p id="resCarrera"></p>
+            </div>
+          </div>
+          <div class="resumen">
+            <div class="resumen-cabecera"><h2>Ficha socioeconómica</h2><button type="button" class="editar" data-ir="2">Editar</button></div>
+            <div class="resumen-cuerpo">
+              <p id="resCanton"></p>
+              <p id="resBeca"></p>
+              <p id="resIngreso"></p>
+            </div>
+          </div>
+          <div class="resumen">
+            <div class="resumen-cabecera"><h2>Documentos</h2><button type="button" class="editar" data-ir="3">Editar</button></div>
+            <ul class="resumen-cuerpo lista-docs" id="resDocumentos"></ul>
+          </div>
+
+          <label class="declaracion">
+            <input type="checkbox" id="declaroVeraz">
+            <span>Declaro que la información proporcionada es verídica.</span>
+          </label>
+          <small class="error" id="error-declaroVeraz"></small>
+          <label class="declaracion">
+            <input type="checkbox" id="aceptoLopd">
+            <span>He leído y acepto la <a href="#" id="enlaceLopd">política de tratamiento de datos personales (LOPD).</a></span>
+          </label>
+          <small class="error" id="error-aceptoLopd"></small>
+          <p class="exito" id="mensajeExito" hidden>Solicitud validada correctamente. El envío aún no está disponible.</p>
+        </section>
+      </form>
+    </main>
+
+    <footer class="pie-pagina">
+      <button type="button" class="boton boton-atras" id="botonAtras" hidden>&larr; Atrás</button>
+      <button type="button" class="boton boton-siguiente" id="botonSiguiente">Siguiente</button>
+    </footer>
+  </div>
+
+  <script src="solicitud.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SGRU - Habitaciones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="habitaciones.css">
+</head>
+<body>
+    <header class="barra-superior">
+      <div class="marca">
+        <div class="marca-uleam"><strong>ULEAM</strong><span>Universidad Laica Eloy Alfaro de Manabí</span></div>
+        <div class="marca-sgru"><strong>SGRU</strong><span>Bienestar estudiantil</span></div>
+      </div>
+      <button type="button" class="boton-gestion">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M10 21v-4h4v4"/></svg>
+        Gestión de solicitudes
+      </button>
+    </header>
+    <nav class="pestanas">
+      <a href="#" class="pestana activa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h6"/></svg> Habitaciones</a>
+      <span class="area">Bienestar estudiantil</span>
+    </nav>
+
+  <main class="contenido">
+    <div class="cabecera-pagina">
+      <div>
+        <h1>Habitaciones</h1>
+        <p class="periodo-texto">Período 2026-2 · Bienestar estudiantil</p>
+      </div>
+      <select id="selectorBloque" class="selector-bloque" aria-label="Bloque">
+        <option>Bloque A</option>
+        <option>Bloque B</option>
+        <option>Bloque C</option>
+      </select>
+    </div>
+
+    <p class="bloque-piso" id="textoBloque">Bloque A - Piso 2</p>
+
+    <ul class="leyenda">
+      <li><span class="cuadro verde">&minus;</span>Disponible</li>
+      <li><span class="cuadro roja">&minus;</span>Ocupada</li>
+      <li><span class="cuadro amarilla">&minus;</span>En mantenimiento</li>
+    </ul>
+
+    <section class="cuadricula" id="cuadricula">
+      <button type="button" class="habitacion disponible" data-numero="201" data-ocupantes="0" data-estado="disponible"><span>Habitación 201</span><strong>0/2 Ocupantes</strong></button>
+      <button type="button" class="habitacion mantenimiento" data-numero="202" data-ocupantes="0" data-estado="mantenimiento"><span>Habitación 202</span><strong>Mantenimiento</strong></button>
+      <button type="button" class="habitacion disponible" data-numero="203" data-ocupantes="0" data-estado="disponible"><span>Habitación 203</span><strong>0/2 Ocupantes</strong></button>
+      <button type="button" class="habitacion ocupada" data-numero="204" data-ocupantes="2" data-estado="ocupada"><span>Habitación 204</span><strong>2/2 Ocupantes</strong></button>
+      <button type="button" class="habitacion ocupada seleccionada" data-numero="205" data-ocupantes="2" data-estado="ocupada"><span>Habitación 205</span><strong>2/2 Ocupantes</strong></button>
+      <button type="button" class="habitacion ocupada" data-numero="206" data-ocupantes="2" data-estado="ocupada"><span>Habitación 206</span><strong>2/2 Ocupantes</strong></button>
+      <button type="button" class="habitacion disponible" data-numero="207" data-ocupantes="0" data-estado="disponible"><span>Habitación 207</span><strong>0/2 Ocupantes</strong></button>
+      <button type="button" class="habitacion ocupada" data-numero="208" data-ocupantes="2" data-estado="ocupada"><span>Habitación 208</span><strong>2/2 Ocupantes</strong></button>
+    </section>
+
+    <div class="seleccion">
+      <p>Habitación seleccionada: <span id="textoSeleccion">205</span></p>
+      <button type="button" class="boton-asignar" id="botonAsignar">Asignar estudiante</button>
+    </div>
+  </main>
+
+  <!-- Ventana: asignar estudiante a la habitación -->
+  <div class="fondo-modal" id="modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="tituloModal">
+      <button type="button" class="cerrar" id="botonCerrar" aria-label="Cerrar">&times;</button>
+      <h2 id="tituloModal">Asignar estudiante</h2>
+      <p class="modal-detalle" id="detalleModal"></p>
+
+      <label for="buscador" class="modal-etiqueta">Buscar estudiante aprobado</label>
+      <input type="text" id="buscador" placeholder="Nombre o cédula" autocomplete="off">
+
+      <ul class="lista-estudiantes" id="listaEstudiantes">
+        <li><button type="button" class="estudiante" data-nombre="Emily Olmedo" data-cedula="1312345678"><span class="avatar">EO</span><span class="datos"><strong>Emily Olmedo</strong><small>Software · Prioridad alta</small></span><svg class="marca-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></button></li>
+        <li><button type="button" class="estudiante" data-nombre="Diego Vélez" data-cedula="1309876543"><span class="avatar">DV</span><span class="datos"><strong>Diego Vélez</strong><small>Ing. Sistemas · Prioridad alta</small></span><svg class="marca-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></button></li>
+        <li><button type="button" class="estudiante" data-nombre="Josué Mendoza" data-cedula="1301122334"><span class="avatar">JM</span><span class="datos"><strong>Josué Mendoza</strong><small>Administración · Prioridad media</small></span><svg class="marca-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></button></li>
+      </ul>
+      <p class="sin-resultados" id="sinResultados" hidden>No se encontraron estudiantes aprobados.</p>
+      <small class="error" id="errorModal"></small>
+      <p class="exito" id="mensajeModal" hidden></p>
+
+      <div class="modal-botones">
+        <button type="button" class="boton-cancelar" id="botonCancelar">Cancelar</button>
+        <button type="button" class="boton-confirmar" id="botonConfirmar">Confirmar asignación</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="habitaciones.js"></script>
+</body>
+</html>

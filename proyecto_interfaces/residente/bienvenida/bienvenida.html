@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SGRU - Bienvenida</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="bienvenida.css">
+</head>
+<body>
+  <div class="pantalla">
+
+    <header class="barra-superior">
+      <div class="logo">
+        <svg class="logo-icono" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle cx="20" cy="16" r="6" fill="currentColor"/>
+          <path d="M8 32c2-7 8-9 12-9s10 2 12 9" fill="currentColor"/>
+        </svg>
+        <span class="logo-texto">Uleam</span>
+      </div>
+      <span class="nombre-sistema">SGRU</span>
+    </header>
+
+    <main class="contenido">
+      <h1>¡Bienvenido a SGRU!</h1>
+
+      <div class="icono-documento" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/>
+          <path d="M14 3v5h5"/>
+          <path d="M9 13h6M9 17h6"/>
+        </svg>
+      </div>
+
+      <p class="presentacion">
+        Antes de continuar, necesitamos conocer tu situación socioeconómica para evaluar tu solicitud de cupo.
+      </p>
+
+      <section class="caja caja-requisitos">
+        <h2>Necesitarás tener a mano:</h2>
+        <ul>
+          <li>Cédula de identidad</li>
+          <li>Certificado de matrícula vigente</li>
+          <li>Aproximadamente 10 minutos</li>
+        </ul>
+      </section>
+
+      <section class="caja caja-proteccion">
+        <svg class="icono-candado" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="4" y="11" width="16" height="10" rx="2"/>
+          <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+        </svg>
+        <p>Tu información está protegida conforme a la LOPD.</p>
+      </section>
+    </main>
+
+    <footer class="pie-pagina">
+      <button type="button" class="boton-comenzar" id="botonComenzar">Comenzar solicitud</button>
+      <p>Guardado automático - Puedes continuar luego.</p>
+    </footer>
+  </div>
+
+  <script src="bienvenida.js"></script>
+</body>
+</html>
