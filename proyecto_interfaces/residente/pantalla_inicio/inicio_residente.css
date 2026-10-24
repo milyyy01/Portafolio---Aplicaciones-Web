@@ -5,8 +5,6 @@
   --gris: #6b6b7b;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
 body {
   font-family: 'Inter', Arial, sans-serif;
   color: var(--azul-oscuro);
@@ -81,8 +79,6 @@ svg { flex-shrink: 0; }
 .aprobada p, .aprobada time { color: #2f8a57; }
 .neutra { background: var(--tarjeta); }
 .neutra p, .neutra time { color: var(--gris); }
-
-:focus-visible { outline: 2px solid #5b59c9; outline-offset: 2px; }
 
 /* Vista de computadora */
 @media (min-width: 900px) {

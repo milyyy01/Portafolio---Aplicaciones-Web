@@ -1,7 +1,3 @@
-document.getElementById('enlaceVolver').addEventListener('click', function (evento) {
-  evento.preventDefault();
-});
-
 var formulario = document.getElementById('formulario');
 var mensajeExito = document.getElementById('mensajeExito');
 var casillas = [
@@ -30,5 +26,8 @@ formulario.addEventListener('submit', function (evento) {
     }
   });
 
-  if (valido) { mensajeExito.hidden = false; }
+  if (valido) {
+    mensajeExito.hidden = false;
+    setTimeout(function () { window.location.href = '../pantalla_inicio/inicio_residente.html'; }, 1500);
+  }
 });

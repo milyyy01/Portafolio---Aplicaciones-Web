@@ -1,7 +1,3 @@
-document.querySelectorAll('a[href="#"]').forEach(function (enlace) {
-  enlace.addEventListener('click', function (evento) { evento.preventDefault(); });
-});
-
 var mensajeAccion = document.getElementById('mensajeAccion');
 var cajaMotivo = document.getElementById('cajaMotivo');
 var motivoRechazo = document.getElementById('motivoRechazo');

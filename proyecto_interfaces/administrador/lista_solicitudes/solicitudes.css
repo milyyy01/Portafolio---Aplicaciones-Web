@@ -1,22 +1,8 @@
-:root {
-  --azul-oscuro: #223468;
-  --titulo: #26337a;
-  --lila: #8785b0;
-  --lila-claro: #ecebf6;
-  --fondo: #f4f5fa;
-  --borde: #e0e0ea;
-  --gris: #7b7b8c;
-}
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
 body {
   font-family: 'Inter', Arial, sans-serif;
   color: var(--azul-oscuro);
   background: var(--fondo);
 }
-button { font-family: inherit; }
-[hidden] { display: none !important; }
 
 /* Encabezado */
 .barra-superior {
@@ -27,21 +13,13 @@ button { font-family: inherit; }
   align-items: center;
   padding: 14px 34px;
 }
-.marca { display: flex; align-items: center; }
+
 .marca strong { display: block; }
 .marca span { display: block; font-size: 8px; margin-top: 3px; }
-.marca-uleam strong { font-size: 20px; font-weight: 800; letter-spacing: .5px; }
+
 .marca-sgru { border-left: 1px solid rgba(255,255,255,.3); margin-left: 16px; padding-left: 16px; }
 .marca-sgru strong { font-size: 14px; }
 .marca-sgru span { font-size: 9px; }
-.boton-gestion {
-  display: flex; align-items: center; gap: 8px;
-  background: rgba(255,255,255,.12);
-  border: 1px solid rgba(255,255,255,.3);
-  color: #fff; font-size: 11px; font-weight: 600;
-  padding: 9px 14px; border-radius: 6px; cursor: pointer;
-}
-.boton-gestion svg { width: 14px; height: 14px; }
 
 /* Pestañas */
 .pestanas {
@@ -57,13 +35,12 @@ button { font-family: inherit; }
   border-bottom: 2px solid transparent;
 }
 .pestana.activa { border-bottom-color: var(--lila); }
-.pestana svg { width: 14px; height: 14px; }
+
 .area { font-size: 9px; color: var(--gris); }
 
 .contenido { max-width: 1120px; margin: 0 auto; padding: 36px 34px 28px; }
 .cabecera-pagina { display: flex; justify-content: space-between; align-items: flex-start; }
 .cabecera-pagina h1 { font-size: 26px; font-weight: 800; color: var(--titulo); }
-.periodo-texto { font-size: 11px; color: var(--gris); margin-top: 10px; }
 
 .etiqueta-chip {
   display: inline-flex; align-items: center; gap: 8px;
@@ -72,12 +49,6 @@ button { font-family: inherit; }
   padding: 10px 14px; border: 0; border-radius: 6px;
 }
 .etiqueta-chip svg { width: 13px; height: 13px; }
-
-.error { display: block; color: #c0392b; font-size: 11px; margin-top: 6px; }
-.error:empty { display: none; }
-.exito { font-size: 11px; color: #1e7a46; margin-top: 12px; }
-
-:focus-visible { outline: 2px solid #5b59c9; outline-offset: 2px; }
 
 .titulo-totales { font-size: 9px; font-weight: 600; color: #5a5a6e; margin-top: 22px; letter-spacing: .3px; }
 .totales { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 10px; }
@@ -119,12 +90,12 @@ td strong { font-weight: 700; }
 .vacia { text-align: center; color: var(--gris); padding: 24px; }
 
 .insignia { display: inline-block; font-size: 9px; font-weight: 600; padding: 5px 9px; border-radius: 6px; }
-.alta { background: #fde7ea; color: #b3263e; }
+
 .media { background: #fff0c9; color: #8a5a00; }
 .baja { background: #e2f1e6; color: #1e7a46; }
 .pendiente { background: #fff0c9; color: #8a5a00; }
 .aprobada { background: #e2f1e6; color: #1e7a46; }
-.rechazada { background: #fde7ea; color: #b3263e; }
+
 .pendiente::before, .aprobada::before, .rechazada::before { content: "\25CF"; font-size: 7px; margin-right: 6px; vertical-align: middle; }
 
 .pie { display: flex; justify-content: space-between; font-size: 8px; color: #5a5a6e; margin-top: 20px; }

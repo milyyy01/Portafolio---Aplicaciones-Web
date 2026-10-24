@@ -1,0 +1,17 @@
+/* Estilos compartidos por las pantallas del residente (móvil) */
+
+:root {
+  --azul-oscuro: #26285a;
+  --fondo-tarjeta: #f1f1f7;
+  --borde: #d5d5dc;
+  --gris: #7b7b8c;
+  --rojo: #c0392b;
+}
+
+.barra-superior a { color: #fff; font-size: 22px; line-height: 1; text-decoration: none; }
+
+.barra-superior h1 { font-size: 18px; font-weight: 700; }
+
+.exito { margin-top: 14px; font-size: 11px; color: #1e7a46; }
+
+.boton-principal:hover { background: #1d1f46; }

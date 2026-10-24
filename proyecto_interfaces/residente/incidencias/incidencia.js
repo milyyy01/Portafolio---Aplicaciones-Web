@@ -1,7 +1,3 @@
-document.getElementById('enlaceVolver').addEventListener('click', function (evento) {
-  evento.preventDefault();
-});
-
 const formulario = document.getElementById('formulario');
 const foto = document.getElementById('foto');
 const textoFoto = document.getElementById('textoFoto');
@@ -13,21 +9,7 @@ const mensajeVacio = document.getElementById('mensajeVacio');
 const botonJson = document.getElementById('botonJson');
 const botonXml = document.getElementById('botonXml');
 
-/* -Utilidades de validación- */
-function valor(id) { return document.getElementById(id).value.trim(); }
-
-function ponerError(id, mensaje) {
-  document.getElementById('error-' + id).textContent = mensaje;
-  document.getElementById(id).classList.add('invalido');
-}
-
-function limpiarError(id) {
-  const error = document.getElementById('error-' + id);
-  if (error) { error.textContent = ''; }
-  const campo = document.getElementById(id);
-  if (campo) { campo.classList.remove('invalido'); }
-}
-
+/* -Validación (valor, ponerError y limpiarError están en compartido/utilidades.js)- */
 formulario.addEventListener('input', function (evento) { limpiarError(evento.target.id); });
 formulario.addEventListener('change', function (evento) { limpiarError(evento.target.id); });
 

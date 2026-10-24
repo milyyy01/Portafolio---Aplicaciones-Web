@@ -5,14 +5,6 @@ var errorCorreo = document.getElementById('errorCorreo');
 var errorContrasena = document.getElementById('errorContrasena');
 var mostrarContrasena = document.getElementById('mostrarContrasena');
 
-// Los enlaces no llevan a ningún lado
-document.getElementById('enlaceVolver').addEventListener('click', function (evento) {
-  evento.preventDefault();
-});
-document.getElementById('enlaceOlvido').addEventListener('click', function (evento) {
-  evento.preventDefault();
-});
-
 // Mostrar u ocultar la contraseña
 mostrarContrasena.addEventListener('change', function () {
   contrasena.type = mostrarContrasena.checked ? 'text' : 'password';
@@ -30,13 +22,12 @@ formulario.addEventListener('submit', function (evento) {
   limpiarErrores();
 
   var valido = true;
-  var formatoCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (correo.value.trim() === '') {
     errorCorreo.textContent = 'Ingresa tu correo institucional.';
     correo.classList.add('invalido');
     valido = false;
-  } else if (!formatoCorreo.test(correo.value.trim())) {
+  } else if (!FORMATO_CORREO.test(correo.value.trim())) {
     errorCorreo.textContent = 'El correo no tiene un formato válido.';
     correo.classList.add('invalido');
     valido = false;
@@ -50,5 +41,14 @@ formulario.addEventListener('submit', function (evento) {
     errorContrasena.textContent = 'La contraseña debe tener al menos 6 caracteres.';
     contrasena.classList.add('invalido');
     valido = false;
+  }
+
+  if (valido) {
+    // Simulación para la demo: si el correo contiene "admin" entra como administrador
+    var esAdmin = correo.value.trim().toLowerCase().indexOf('admin') !== -1;
+    iniciarSesion(esAdmin ? 'administrador' : 'residente', correo.value.trim());
+    window.location.href = esAdmin
+      ? '../../administrador/pantalla_inicio/inicio_admin.html'
+      : '../bienvenida/bienvenida.html';
   }
 });

@@ -7,13 +7,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../compartido/base.css">
+  <link rel="stylesheet" href="../../compartido/residente.css">
   <link rel="stylesheet" href="incidencia.css">
-  <link rel="stylesheet" href="../../almacenamiento_interfaces/almacenamiento.css">
+  <link rel="stylesheet" href="../../compartido/almacenamiento.css">
 </head>
-<body>
+<body data-rol="residente">
   <div class="pantalla">
     <header class="barra-superior">
-      <a href="#" id="enlaceVolver" aria-label="Volver">&larr;</a>
+      <a href="../pantalla_inicio/inicio_residente.html" id="enlaceVolver" aria-label="Volver">&larr;</a>
       <h1>Reportar incidencia</h1>
     </header>
 
@@ -69,7 +71,7 @@
         <p class="exito" id="mensajeExito" hidden>Reporte guardado correctamente.</p>
       </form>
 
-      <!-- Reportes guardados en LocalStorage -->
+      <!-- Nuevo: reportes guardados en LocalStorage -->
       <section class="guardadas">
         <h2>Reportes guardados</h2>
         <div class="acciones-datos">
@@ -81,7 +83,8 @@
       </section>
     </main>
   </div>
-  <script src="../../almacenamiento_interfaces/almacenamiento.js"></script>
+  <script src="../../compartido/utilidades.js"></script>
+  <script src="../../compartido/almacenamiento.js"></script>
   <script src="incidencia.js"></script>
 </body>
 </html>

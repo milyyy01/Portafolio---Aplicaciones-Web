@@ -17,25 +17,10 @@ var archivos = { cedula: null, matricula: null, socioeconomico: null, discapacid
 var iconoSubir = '<path d="M12 16V4M7 9l5-5 5 5M5 20h14"/>';
 var iconoNoAplica = '<circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/>';
 
-/* -Utilidades- */
-function valor(id) { return document.getElementById(id).value.trim(); }
-
+/* -Utilidades (valor, ponerError y limpiarError están en compartido/utilidades.js)- */
 function opcionElegida(nombre) {
   var marcada = document.querySelector('input[name="' + nombre + '"]:checked');
   return marcada ? marcada.value : '';
-}
-
-function ponerError(id, mensaje) {
-  document.getElementById('error-' + id).textContent = mensaje;
-  var campo = document.getElementById(id);
-  if (campo) { campo.classList.add('invalido'); }
-}
-
-function limpiarError(id) {
-  var error = document.getElementById('error-' + id);
-  if (error) { error.textContent = ''; }
-  var campo = document.getElementById(id);
-  if (campo) { campo.classList.remove('invalido'); }
 }
 
 // Quita el error de un campo apenas la persona lo corrige
@@ -50,7 +35,6 @@ formulario.addEventListener('change', function (evento) {
 function validarPaso1() {
   var valido = true;
   var soloLetras = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ' ]{2,}$/;
-  var formatoCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (!soloLetras.test(valor('nombres'))) {
     ponerError('nombres', 'Ingresa tus nombres completos (solo letras).'); valido = false;
@@ -71,7 +55,7 @@ function validarPaso1() {
 
   if (valor('correo') === '') {
     ponerError('correo', 'Ingresa tu correo institucional.'); valido = false;
-  } else if (!formatoCorreo.test(valor('correo'))) {
+  } else if (!FORMATO_CORREO.test(valor('correo'))) {
     ponerError('correo', 'El correo no tiene un formato válido.'); valido = false;
   }
 
@@ -167,6 +151,7 @@ botonSiguiente.addEventListener('click', function () {
     mostrarPaso(pasoActual + 1);
   } else {
     mensajeExito.hidden = false; // el envío real aún no existe
+    setTimeout(function () { window.location.href = '../pantalla_inicio/inicio_residente.html'; }, 1500);
   }
 });
 
@@ -176,10 +161,6 @@ botonAtras.addEventListener('click', function () {
 
 document.querySelectorAll('.editar').forEach(function (boton) {
   boton.addEventListener('click', function () { mostrarPaso(Number(boton.dataset.ir)); });
-});
-
-document.getElementById('enlaceLopd').addEventListener('click', function (evento) {
-  evento.preventDefault();
 });
 
 /* -Ficha socioeconómica- */

@@ -7,18 +7,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../compartido/base.css">
+  <link rel="stylesheet" href="../../compartido/admin.css">
   <link rel="stylesheet" href="solicitudes.css">
 </head>
-<body>
+<body data-rol="administrador">
     <header class="barra-superior">
       <div class="marca">
         <div class="marca-uleam"><strong>ULEAM</strong><span>Universidad Laica Eloy Alfaro de Manabí</span></div>
         <div class="marca-sgru"><strong>SGRU</strong><span>Bienestar estudiantil</span></div>
       </div>
-      <button type="button" class="boton-gestion">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M10 21v-4h4v4"/></svg>
-        Gestión de solicitudes
-      </button>
+      <div class="acciones">
+        <button type="button" class="boton-gestion">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M10 21v-4h4v4"/></svg>
+          Gestión de solicitudes
+        </button>
+        <button type="button" class="boton-gestion" data-cerrar-sesion title="Cerrar sesión" aria-label="Cerrar sesión">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 4H5v16h5M15 8l4 4-4 4M19 12H9"/></svg>
+          <span class="texto-boton">Cerrar sesión</span>
+        </button>
+      </div>
     </header>
     <nav class="pestanas">
       <a href="#" class="pestana activa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h6"/></svg> Solicitudes de cupo</a>
@@ -28,6 +36,7 @@
   <main class="contenido">
     <div class="cabecera-pagina">
       <div>
+        <a href="../pantalla_inicio/inicio_admin.html" class="enlace-panel">&larr; Volver al panel</a>
         <h1>Solicitudes de cupo</h1>
         <p class="periodo-texto">Período 2026-2 · Bienestar estudiantil</p>
       </div>
@@ -126,6 +135,7 @@
       <span>SGRU / ULEAM</span>
     </footer>
   </main>
+  <script src="../../compartido/utilidades.js"></script>
   <script src="solicitudes.js"></script>
 </body>
 </html>

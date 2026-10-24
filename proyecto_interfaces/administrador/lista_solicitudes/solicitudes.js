@@ -1,7 +1,3 @@
-document.querySelectorAll('a[href="#"]').forEach(function (enlace) {
-  enlace.addEventListener('click', function (evento) { evento.preventDefault(); });
-});
-
 var filtroSede = document.getElementById('filtroSede');
 var filtroEstado = document.getElementById('filtroEstado');
 var filas = document.querySelectorAll('tbody tr[data-sede]');
@@ -20,3 +16,11 @@ function filtrar() {
 
 filtroSede.addEventListener('change', filtrar);
 filtroEstado.addEventListener('change', filtrar);
+
+// Clic en una fila: abre el detalle de la solicitud
+filas.forEach(function (fila) {
+  fila.style.cursor = 'pointer';
+  fila.addEventListener('click', function () {
+    window.location.href = '../detalle_solicitud/detalle_solicitud.html';
+  });
+});

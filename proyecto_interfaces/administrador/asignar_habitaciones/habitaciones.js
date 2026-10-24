@@ -1,7 +1,3 @@
-document.querySelectorAll('a[href="#"]').forEach(function (enlace) {
-  enlace.addEventListener('click', function (evento) { evento.preventDefault(); });
-});
-
 var habitaciones = document.querySelectorAll('.habitacion');
 var textoSeleccion = document.getElementById('textoSeleccion');
 var selectorBloque = document.getElementById('selectorBloque');

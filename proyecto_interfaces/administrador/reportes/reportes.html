@@ -7,11 +7,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../compartido/base.css">
+  <link rel="stylesheet" href="../../compartido/admin.css">
   <link rel="stylesheet" href="reportes.css">
-  <link rel="stylesheet" href="../../almacenamiento_interfaces/almacenamiento.css">
+  <link rel="stylesheet" href="../../compartido/almacenamiento.css">
 </head>
-<body>
+<body data-rol="administrador">
   <main class="panel">
+    <a href="../pantalla_inicio/inicio_admin.html" class="enlace-panel">&larr; Volver al panel</a>
     <div class="cabecera">
       <div>
         <h1>Reportes institucionales</h1>
@@ -45,7 +48,8 @@
       <ul class="lista" id="listaTipos"></ul>
     </section>
   </main>
-  <script src="../../almacenamiento_interfaces/almacenamiento.js"></script>
+  <script src="../../compartido/utilidades.js"></script>
+  <script src="../../compartido/almacenamiento.js"></script>
   <script src="reportes.js"></script>
 </body>
 </html>

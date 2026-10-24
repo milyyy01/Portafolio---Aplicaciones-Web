@@ -7,8 +7,6 @@
   --rojo: #c0392b;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
 body {
   font-family: 'Inter', Arial, sans-serif;
   color: var(--texto);
@@ -159,7 +157,6 @@ input.invalido, select.invalido { border-color: var(--rojo); }
 .declaracion { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; font-size: 11px; margin-top: 14px; }
 .declaracion input { margin-top: 2px; }
 .declaracion a { color: var(--azul-oscuro); }
-.exito { margin-top: 14px; font-size: 11px; color: #1e7a46; }
 
 /* Pie de página */
 .pie-pagina {
@@ -183,8 +180,6 @@ input.invalido, select.invalido { border-color: var(--rojo); }
 .boton-atras { width: 36%; background: transparent; color: #fff; border: 1px solid #fff; }
 .boton-atras[hidden] { display: none; }
 .boton-atras:hover { background: rgba(255, 255, 255, .12); }
-
-:focus-visible { outline: 2px solid #5b59c9; outline-offset: 2px; }
 
 /* Vista de computadora: campos en dos columnas */
 @media (min-width: 900px) {

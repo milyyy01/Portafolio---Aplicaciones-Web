@@ -4,8 +4,6 @@
   --gris-borde: #d5d5dc;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-
 body {
   font-family: 'Inter', Arial, sans-serif;
   color: var(--azul-oscuro);
@@ -91,7 +89,6 @@ input.invalido { border-color: #c0392b; }
   font-weight: 600;
   cursor: pointer;
 }
-.boton-principal:hover { background: #1d1f46; }
 
 .olvido {
   display: block;
@@ -102,8 +99,6 @@ input.invalido { border-color: #c0392b; }
 }
 
 .pie-pagina { background: var(--azul-oscuro); height: 56px; }
-
-:focus-visible { outline: 2px solid #5b59c9; outline-offset: 2px; }
 
 /* Vista de computadora: portada a la izquierda y formulario a la derecha */
 @media (min-width: 900px) {
