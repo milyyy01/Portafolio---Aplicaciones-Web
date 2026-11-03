@@ -1,4 +1,4 @@
-// 1. Referencias al Modelo de Objetos del Documento (DOM)
+// 1. Referencias al Modelo de Objetos del Documento (DOM): 
 const registroEstudiante = document.getElementById('formulario-tareas');
 const tituloTarea = document.getElementById('titulo-tarea');
 const descripcionTarea = document.getElementById('descripcion-tarea');
