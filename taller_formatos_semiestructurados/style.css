@@ -1,0 +1,96 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 24px 12px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f1f5f9;
+    color: #0d070b;
+}
+
+.contenedor {
+    max-width: 960px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+}
+
+h1 {
+    text-align: center;
+    color: #603f74;
+}
+h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+.fila {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.campo { display: flex; flex-direction: column; }
+label { font-size: .85rem; font-weight: 600; margin-bottom: 4px; }
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: .95rem;
+    font-family: inherit;
+    background: #fff;
+    color: #0d070b;
+}
+select { cursor: pointer; }
+
+input:focus,
+select:focus { outline: none; border-color: #603f74; }
+
+input.invalido,
+select.invalido { border-color: #dc2626; background: #fef2f2; }
+input.valido,
+select.valido { border-color: #16a34a; }
+
+.error { color: #dc2626; font-size: .78rem; min-height: 1em; margin-top: 3px; }
+
+button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 6px;
+    background: #9749b8;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+button:hover { background: #991d78; }
+form button { grid-column: 1 / -1; }
+
+.acciones-datos {
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+}
+
+.btn-secundario { background: #7e578e; }
+.btn-secundario:hover { background: #ab93c0; }
+.btn-eliminar { background: #dc2626; padding: 6px 10px; font-size: .8rem; }
+.btn-eliminar:hover { background: #b91c1c; }
+
+.tabla-scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+th, td { padding: 8px; border-bottom: 1px solid #e2e8f0; text-align: left; }
+th { background: #eff6ff; color: #140d16; }
+
+.sin-datos { color: #64748b; text-align: center; }

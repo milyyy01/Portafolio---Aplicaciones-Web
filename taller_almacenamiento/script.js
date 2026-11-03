@@ -1,5 +1,5 @@
 // 1. Referencias al Modelo de Objetos del Documento (DOM)
-const formularioTareas = document.getElementById('formulario-tareas');
+const registroEstudiante = document.getElementById('formulario-tareas');
 const tituloTarea = document.getElementById('titulo-tarea');
 const descripcionTarea = document.getElementById('descripcion-tarea');
 const listaTareas = document.getElementById('lista-tareas');
@@ -38,7 +38,7 @@ function actualizarAlmacenamientoLocal() {
 
 
 // 5. Captura del evento de envío del formulario
-formularioTareas.addEventListener('submit', (evento) => {
+registroEstudiante.addEventListener('submit', (evento) => {
     evento.preventDefault(); // Evita que la página se recargue
 
 
@@ -52,7 +52,7 @@ const nuevaTarea = {
 coleccionTareas.push(nuevaTarea);
 actualizarAlmacenamientoLocal();
 redibujarInterfaz();
-formularioTareas.reset(); // Limpiar campos de texto
+registroEstudiante.reset(); // Limpiar campos de texto
 });
 
 

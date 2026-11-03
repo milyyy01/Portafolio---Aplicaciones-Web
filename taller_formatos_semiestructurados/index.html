@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Estudiantes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Registro de Estudiantes</h1>
+
+        <form id="registro-estudiante" novalidate>
+            <div class="campo">
+                <label for="cedula">Cédula</label>
+                <input type="text" id="cedula" placeholder="1301234567" maxlength="10" inputmode="numeric">
+                <span class="error" id="error-cedula"></span>
+            </div>
+            <div class="campo">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" id="apellidos" placeholder="Apellidos del estudiante">
+                <span class="error" id="error-apellidos"></span>
+            </div>
+            <div class="campo">
+                <label for="nombres">Nombres</label>
+                <input type="text" id="nombres" placeholder="Nombres del estudiante">
+                <span class="error" id="error-nombres"></span>
+            </div>
+            <div class="campo">
+                <label for="direccion">Dirección</label>
+                <input type="text" id="direccion" placeholder="Dirección">
+                <span class="error" id="error-direccion"></span>
+            </div>
+            <div class="campo">
+                <label for="telefono">Teléfono</label>
+                <input type="text" id="telefono" placeholder="0000000000" maxlength="10" inputmode="numeric">
+                <span class="error" id="error-telefono"></span>
+            </div>
+            <div class="campo">
+                <label for="correo">Correo electrónico</label>
+                <input type="text" id="correo" placeholder="usuario@dominio.com">
+                <span class="error" id="error-correo"></span>
+            </div>
+            <div class="campo">
+                <label for="facultad">Facultad:</label>
+                <select id="facultad" name="facultad" required>
+                    <option value="" disabled selected>Selecciona una opción...</option>
+                    <option value="Facultad de Ciencias de la Salud">Facultad de Ciencias de la Salud</option>
+                    <option value="Facultad de Ciencias Administrativas">Facultad de Ciencias Administrativas</option>
+                    <option value="Facultad de Educación y Turismo">Facultad de Educación y Turismo</option>
+                    <option value="Facultad de Ingeniería, Industria y Arquitectura">Facultad de Ingeniería, Industria y Arquitectura</option>
+                    <option value="Facultad de Ciencias de la Vida y Tecnologías">Facultad de Ciencias de la Vida y Tecnologías</option>
+                    <option value="Facultad de Ciencias Sociales, Derecho y Bienestar">Facultad de Ciencias Sociales, Derecho y Bienestar</option>
+                    <option value="Facultad de Artes, Humanidades y Patrimonio">Facultad de Artes, Humanidades y Patrimonio</option>
+                </select>
+                <span class="error" id="error-facultad"></span>
+            </div>
+            <div class="fila">
+                <div class="campo">
+                    <label for="nivel">Nivel</label>
+                    <input type="text" id="nivel" placeholder="0" maxlength="2" inputmode="numeric">
+                    <span class="error" id="error-nivel"></span>
+                </div>
+                <div class="campo">
+                    <label for="paralelo">Paralelo</label>
+                    <input type="text" id="paralelo" placeholder="A" maxlength="1">
+                    <span class="error" id="error-paralelo"></span>
+                </div>
+            </div>
+            <button type="submit">Registrar estudiante</button>
+        </form>
+
+        <div class="acciones-datos">
+            <button id="btn-exportar-json" class="btn-secundario">Exportar a JSON</button>
+        </div>
+
+        <h2>Estudiantes registrados</h2>
+        <div class="tabla-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cédula</th><th>Apellidos</th><th>Nombres</th><th>Dirección</th>
+                        <th>Teléfono</th><th>Correo</th><th>Facultad</th><th>Nivel</th><th>Par.</th><th></th>
+                    </tr>
+                </thead>
+                <tbody id="lista-estudiantes"></tbody>
+            </table>
+        </div>
+        <p id="sin-datos" class="sin-datos">Aún no hay estudiantes registrados.</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
